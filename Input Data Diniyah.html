@@ -1,0 +1,3754 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Input Data Anak Asuh Mukim</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #ddd;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 10px;
+      padding: 8px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #34495e;
+    }
+
+    /* Form content */
+    .content {
+      flex: 1;
+      padding: 30px;
+      background: #f4f4f4;
+    }
+
+    .form-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .form-item {
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input, select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    h1, h2 {
+      margin-top: 20px;
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Sidebar Menu -->
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="kyd.html">Input Data Base Anak Asuh Mukim</a>
+    <a href="Tabel Data Base Anak Asuh.html">Tabel Data Base Anak Asuh Mukim</a>
+    <a href="Kuantitas Data Anak Asuh Mukim.html">Kuantitas Data Anak Asuh Mukim</a>
+    <a href="Input Data Diniyah.html">Input Data Perkembangan Diniyah</a>
+    <a href="Tabel Perkembangan Diniyah Per Anak.html">Tabel Perkembangan Diniyah Per Anak</a>
+    <a href="Rekap Diniyah Perjenjang Pendidikan.html">Rekap Diniyah Per Jenjang Pendidikan</a>
+    <a href="Pencapaian Target Diniyah (PDKS) Asrama.html">Pencapaian Target Diniyah (PDKS) Asrama</a>
+    <a href="Rekap hafalan ayat Perjenjang Tingkat Pendidikan.html">Rekap hafalan ayat Perjenjang Tingkat Pendidikan</a>
+    <a href="Login.html">Logout</a>
+  </div>
+
+  <!-- Form Content -->
+  <div class="content">
+    <h2>Input Data Perkembangan Diniyah</h2>
+    <form>
+    <div class="form-group">
+      <div class="form-item">
+        <label>Tanggal input</label>
+        <input type="date">
+      </div>
+      <div class="form-item">
+        <label>Nama Anak</label>
+        <select><option>Filter</option></select>
+      </div>
+      <div class="form-item">
+        <label>Pendidikan</label>
+        <input type="text" placeholder="otomatis">
+      </div>    
+      <div class="form-item">
+        <label for="kelas">Pilih Kelas</label>
+        <select id="kelas" onchange="tampilkanKelas()">
+          <option>-- Pilih Kelas --</option>
+          <option>kelas 1</option>
+          <option>kelas 2</option>
+          <option>kelas 3</option>
+          <option>kelas 4</option>
+          <option>kelas 5</option>
+          <option>kelas 6</option>
+          <option>kelas 7</option>
+          <option>kelas 8</option>
+          <option>kelas 9</option>
+          <option>kelas 10</option>
+          <option>kelas 11</option>
+          <option>kelas 12</option>
+        </select>
+      </div>
+      <div class="form-item">
+        <label>Asrama</label>
+        <input type="text" placeholder="otomatis">
+      </div>
+      <div class="form-item">
+        <label>Nama Kepala Asrma</label>
+        <input type="text" placeholder="otomatis">
+      </div>
+      <div class="form-item">
+        <label>Tempat Lahir</label>
+        <input type="text" placeholder="otomatis">
+      </div>
+      <div class="form-item">
+        <label>Tanggal Lahir</label>
+        <input type="text" placeholder="otomatis">
+      </div>
+      <div class="form-item">
+        <label>Jenis Kelamin</label>
+        <input type="text" placeholder="otomatis">
+      </div>      
+    </div>
+
+    <div id="kelas1" class="form-section">
+      <h2 style="color:blue;">Kelas 1</h2>
+      <h3 style="color:red;">Pengetahuan Diniyah</h3>
+      <form>                       
+        <div class="form-group">
+        <div>
+          <label>Hafalan Surat Pendek</label><br>
+          <select>
+            <option selected disabled>-- Pilih --</option>
+            <option>109 (Al Kaafiroon)</option>
+            <option>110 (An Nashr)</option>
+            <option>111 (Al Lahab)</option>
+            <option>112 (Al Ikhlash)</option>
+            <option>113 (Al Falaq)</option>
+            <option>114 (An Naas)</option>
+          </select>
+        </div>
+        <div>
+          <label>Nilai</label><br>
+          <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+          <label>Hafalan 9 Hadist Pendek</label><br>
+          <select>
+            <option selected disabled>-- Pilih --</option>
+            <option>Malu Sebagian dari Iman</option>
+            <option>Jangan makan sambil berdiri</option>
+            <option>Agama</option>
+            <option>Berkata Baik/Diam</option>
+            <option>Hadits Sholat Tepat Waktunya</option>
+            <option>Hadits menjaga kebersihan</option>
+            <option>Jagalah lisanmu</option>
+            <option>Hadits Makan dengan Tangan Kanan</option>
+            <option>Hadits Larangan Berbuat Kerusakan</option>
+          </select>        
+        </div>
+        <div>
+          <label>Nilai</label><br>
+          <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+          <label>Hafalan 8 Doa Harian</label><br>
+          <select>
+            <option selected disabled>-- Pilih --</option>
+            <option>Doa untuk orang tua</option>
+            <option>Doa keselamatan dunia akhirat</option>
+            <option>Doa sebelum makan</option>
+            <option>Doa sesudah makan</option>
+            <option>Doa ketika bercermin</option>
+            <option>Doa sebelum tidur</option>
+            <option>Doa sesudah tidur</option>
+            <option>Doa memakai pakaian baru</option>
+          </select>                  
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Hapal huruf hijaiyah</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>  
+              <option>Hapal huruf hijaiyah</option>
+            </select>  
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Hafalan Rukun Iman</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Iman Kepada Allah</option>
+              <option>Iman Kepada Malaikat</option>
+              <option>Iman Kepada Rasul</option>
+              <option>Iman kepada kitab Allah</option>
+              <option>Iman kepada hari akhir</option>
+              <option>Iman kepada qodo dan qodar</option>                  
+            </select>
+        </div>            
+        <div>
+          <label>Nilai</label><br>
+          <input type="number" min="0" max="100" placeholder="0">
+      </div>
+      <div>
+          <label>Hafalan Rukun Islam</label><br>
+          <select>
+            <option selected disabled>-- Pilih --</option>
+            <option>Syahadat</option>
+            <option>Sholat</option>
+            <option>Puasa</option>
+            <option>Zakat</option>
+            <option>Haji</option>                  
+          </select>
+      </div>
+      <div>
+          <label>Nilai</label><br>
+          <input type="number" min="0" max="100" placeholder="0">
+      </div>
+      <div>
+          <label>Hafalan Asmaul Husna</label><br>
+          <select>
+            <option selected disabled>-- Pilih --</option>
+            <option>Hafalan Asmaul Husna (1-45)</option>                                    
+          </select>
+      </div>
+      <div>
+          <label>Nilai</label><br>
+          <input type="number" min="0" max="100" placeholder="0">
+      </div>
+      <div>
+          <label>Hapal lafad adzan dan iqomat</label><br>
+          <select>
+            <option selected disabled>-- Pilih --</option>
+            <option>Hapal lafad adzan dan iqomat</option>                                    
+          </select>
+      </div>
+      <div>
+          <label>Nilai</label><br>
+          <input type="number" min="0" max="100" placeholder="0">
+      </div>
+      <div>
+          <label>Hapal bacaan wudhu</label><br>
+          <select>
+            <option selected disabled>-- Pilih --</option>
+            <option>Bacaan niat berwudu</option>
+            <option>Doa setelah berwudu</option>                                    
+          </select>
+      </div>
+      <div>
+          <label>Nilai</label><br>
+          <input type="number" min="0" max="100" placeholder="0">
+      </div>
+      <div>
+          <label>Mengenal 10 kisah sahabat yang di jamin masuk surga</label><br>
+          <select>
+            <option selected disabled>-- Pilih --</option>
+            <option>Abu Bakar Ash-Shidiq</option>
+            <option>Umar Bin Khattab</option>
+            <option>Utsman bin Affan</option>
+            <option>Ali  bin Abi Thalib</option>
+            <option>Thalhah bin Ubaidillah</option>
+            <option>Zubair bin Awwam</option>
+            <option>Abdurrahman bin Auf</option>
+            <option>Sa'ad bin Abi Waqqash</option>
+            <option>Sa'id bin Zaid bin Amru bin Naufal Al-Adawi</option>
+            <option>Abu Ubaidillah bin Jarrah</option>                                    
+          </select>
+      </div>
+      <div>
+          <label>Nilai</label><br>
+          <input type="number" min="0" max="100" placeholder="0">
+      </div>
+      </div> 
+      </form>
+        
+
+    <h3 style="color:red;">Karakter</h3>
+    <form>                       
+      <div class="form-group">
+        <div>
+            <label>Mulai mengenal bacaan & praktek sholat</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Bacaan Niat</option>
+              <option>Takbirotul ikhrom</option>
+              <option>Doa iftitah</option>
+              <option>Doa Ruku</option>
+              <option>Doa I'tidal</option>
+              <option>Doa sujud</option>
+              <option>Doa duduk diantara dua sujud</option>
+              <option>Doa tasahud Awal</option>
+              <option>Doa tasahud ahkhir</option>
+              <option>Bacaan salam</option>
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Terbiasa makan & minum sesuai adab islam</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Terbiasa makan & minum sesuai adab islam</option>
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Terbiasa tidur sesuai adab islam</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Terbiasa tidur sesuai adab islam</option>
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Tumbuh sayang terhadap keluarga</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Tumbuh sayang terhadap keluarga</option>
+            </select>  
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Berkata jujur dan sopan</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Berkata jujur dan sopan</option>                  
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Adab terhadap orang tua</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Adab terhadap orang tua</option>                  
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Membiasakan membaca Alqur'an</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Mempelajari Iqro jilid 1-3</option>
+              <option>Membaca Al Qur'an (Surat-surat pendek)</option>
+              <option>Lancar membaca Al Qur'an</option>                                    
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Mulai Melakukan sholat wajib 5 waktu</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Melakukan sholat wajib 5 waktu</option>
+              <option>Melakukan sholat wajib tepat waktu</option>
+              <option>Melakukan sholat wajib secara mandiri</option>                                    
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Memakai pakaian yang bersih rapih dan menutup aurat laki-laki / Perempuan</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Mengenal batasan aurat laki-laki dan perempuan</option>
+              <option>Memakai pakaian yang menutup aurat</option>
+              <option>Memakai pakaian yang bersih dan rapih</option>                                    
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        </div>
+    </form>
+
+    <h3 style="color:red;">Skill</h3>
+    <form>                       
+        <div class="form-group">
+        <div>
+            <label>Mampu makan sendiri</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Mampu makan sendiri</option>
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label> Mengambil air minum sendiri</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option> Mengambil air minum sendiri</option>
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Mulai mandiri ( mandi, berpakaian, dll)</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Mulai mandiri ( mandi, berpakaian, dll)</option>
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Bisa baca minimal Iqra 3</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Bisa baca minimal Iqra 3</option>
+            </select>  
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Bisa membaca, menulis dan berhitung</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Mampu membaca dengan lancar</option>
+              <option>Mampu menulis dengan rapih</option>
+              <option>Mampu berhitung sederhana (pengurangan dan pertambahan)</option>
+              <option>Mampu berhitung Kabataku (Kali, Bagi, Tambah, dan Kurang)</option>                  
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Hapal syarat, rukun dan batal sholat</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Syarat sah solat</option>
+              <option>Rukun solat</option>
+              <option>Hal yang membatalkan sholat</option>                  
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Bisa praktek wudhu</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Berwudhu dengan tertib</option>
+              <option>Mengetahui hal-hal yang bisa membatalkan wudhu</option>
+              <option>Mampu melakukan gerakan wudhu dengan benar</option>                                    
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Mulai mengenal cara dan praktek sholat</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Cara berdiri dalam solat</option>
+              <option>Gerakan takbirotul ikhrom</option>
+              <option>Gerakan ruku</option>
+              <option>Gerakan I'tidal</option>
+              <option>Gerakan sujud</option>
+              <option>Cara duduk diantara dua sujud</option>
+              <option>Cara duduk tasyahud awwal</option>
+              <option>Cara duduk tasyahud akhir</option>
+              <option>Cara salam ke kanan dan ke kiri</option>                                    
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Mulai mengenal praktek shaum wajib/Sunah (1/bulan)</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Mulai mengenal praktek shaum wajib/Sunah (1/bulan)</option>                      
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Mengetahui waktu-waktu sholat</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Mengetahui waktu-waktu sholat</option>                      
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        </div>            
+        </form>
+      </div>
+       
+
+
+      <div id="kelas2" class="form-section">
+        <h2 style="color:blue;">Kelas 2</h2>
+        <h3 style="color:red;">Pengetahuan Diniyah</h3>
+        <form>                       
+          <div class="form-group">
+          <div>
+            <label>Hafalan Surat Pendek</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>103 (Al 'Ashr)</option>
+              <option>104 (Al Humazah)</option>
+              <option>105 (Al Fiil)</option>
+              <option>106 (Quraisy)</option>
+              <option>107 (Al Maa'uun)</option>
+              <option>108 (Al Kautsar)</option>
+            </select>
+          </div>
+          <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+          </div>
+          <div>
+            <label>Hafalan 9 Hadist Pendek</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Hadits Larangan Berburuk Sangka</option>
+              <option>Hadits kemuliaan Ibu</option>
+              <option>Hadits Menyebarkan Salam</option>
+              <option>Ridho Alloh ( raab) adalah ridho orang tua</option>
+              <option>Berkata baik adalah sedekah</option>
+              <option>Hadits Berkata Benar</option>
+              <option>Jangan Suka Marah</option>
+              <option>Hadits Perintah Saling Menyayangi</option>
+              <option>Hadits Menutup Aurat</option>
+            </select>        
+          </div>
+          <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+          </div>
+          <div>
+            <label>Hafalan 8 Doa Harian</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Doa memakai pakaian</option>
+              <option>Doa melepas pakaian</option>
+              <option>Doa masuk WC/kamar mandi</option>
+              <option>Doa keluar WC/kamar mandi</option>
+              <option>Doa berpergian</option>
+              <option>Doa sampe tujuan</option>
+              <option>Doa ketika masuk rumah</option>
+              <option>Doa menuju masjid</option>
+            </select>                  
+          </div>
+          <div>
+              <label>Nilai</label><br>
+              <input type="number" min="0" max="100" placeholder="0">
+          </div>
+          <div>
+              <label>Mengetahui silsilah nasab Nabi Muhammad Saw</label><br>
+              <select>
+                <option selected disabled>-- Pilih --</option>
+                <option>Mengetahui silsilah nasab Nabi Muhammad Saw</option>
+              </select>  
+          </div>
+          <div>
+              <label>Nilai</label><br>
+              <input type="number" min="0" max="100" placeholder="0">
+          </div>
+          <div>
+              <label>Hapal syarat, rukun dan batal shaum</label><br>
+              <select>
+                <option selected disabled>-- Pilih --</option>
+                <option>Mengetahui Syarat wajib shaum</option>
+                <option>Mengetahui aturan-aturan shaum</option>
+                <option>Mengetahui Hal-hal yang dapat membatalkan shaum</option>                                 
+              </select>
+          </div>            
+          <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Hapal Asmaul Husna</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Hapal Asmaul Husna (46-99)</option>                  
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Mengenal 15 kisah sahabat</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Mush'ab bin Umair : Duta Islam pertama dan bapak Tauhid</option>
+              <option>Salman al-Farisi : Pencari kebenaran</option>
+              <option>Abu Dzar al-Ghifari : Tokoh gerakan hidup</option>
+              <option>Bilal bin Rabah : Muadzin Rasulullah dan lambang persamaan derajat manusia</option>
+              <option>Abdullah bin Umar : Tekun beribadah dan mendekatkan diri kepada Allah</option>
+              <option>Sa'ad bin Abi Waqqash : Singa yang menyembunyikan kukunya</option>
+              <option>Shuhaib bin Sinan : Abu Yahya pedagang yang selalu mendapat laba</option>
+              <option>Mu'adz bin Jabal : Cendekiawan Muslim yang paling tahu mana yang halal dan mana yang haram</option>
+              <option>Miqdad bin 'Amr : Pelopor barisan berkuda dan ahli filsafat</option>
+              <option>Said bin 'Amir : Pemilik kebesaran dibalik kesederhanaan</option>
+              <option>Hamzah bin Abdul Mutthalib : Singa Allah dan panglima syuhada</option>
+              <option>Abdullah bin Mas'ud : Yang pertama kali mengumandangkan al-Quran dengan suara merdu</option>
+              <option>Hudzaifah Ibnul Yaman : Seteru kemunafikan, kawan keterbukaan</option>
+              <option>Ammar bin Yasir : Seorang tokoh penghuni surga</option>
+              <option>Ubadah bin Shamit : Tokoh yang gigih menentang penyelewengan</option>                                    
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Hapal nama 10 Malaikat</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Jibril</option>
+              <option>Mikail</option>
+              <option>Isrofil</option>
+              <option>Ijroil</option>
+              <option>Munkar</option>
+              <option>Nakir</option>
+              <option>Rokib</option>
+              <option>Atid</option>
+              <option>Malik</option>
+              <option>Ridwan</option>                                    
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Mengenal anggota keluarga</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Mengenal anggota keluarga</option>                                    
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Mengenal silsilah keluarga</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Mengenal silsilah keluarga</option>
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        </div> 
+        </form>
+          
+  
+      <h3 style="color:red;">Karakter</h3>
+      <form>                       
+        <div class="form-group">
+        <div>
+            <label>Membiasakan membaca Alqur'an (Iqro 4-6)</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Membiasakan membaca Alqur'an (Iqro 4-6)</option>
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Mulai melakukan shaum wajib</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Melakukan sahur sebelum adzan subuh</option>
+              <option>Mengetahui adab-adab shaum (menahan lapar, haus, dan emosi)</option>
+              <option>Mengetahui adab-adab berbuka shaum</option>
+              <option>Mengetahui hal-hal yang dapat membatalkan shaum</option>
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Mulai melakukan sholat berjamaah</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Mengetahui keutamaan sholat berjama'ah</option>
+              <option>Melakukan sholat berjama'ah tanpa disuruh</option>
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+      </div>          
+      </form>
+  
+      <h3 style="color:red;">Skill</h3>
+      <form>                       
+        <div class="form-group">
+        <div>
+            <label>Bisa baca Al-qur'an</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Lancar membaca Iqro jilid 4-6</option>
+              <option>Lancar membaca Al Qur'an</option>
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Bisa praktek sholat</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Melakukan gerakan sholat dengan benar</option>
+              <option>Melakukan rukun wudhu dengan tertib</option>
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+            <label>Mulai mengenal praktek shaum wajib/Sunah (2/bulan)</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Mulai mengenal praktek shaum wajib/Sunah (2/bulan)</option>
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        </div>            
+        </form>
+        </div>
+        
+        <div id="kelas3" class="form-section">
+          <h2 style="color:blue;">Kelas 3</h2>
+          <h3 style="color:red;">Pengetahuan Diniyah</h3>
+          <form>                       
+            <div class="form-group">
+            <div>
+              <label>Hafalan Surat Pendek</label><br>
+              <select>
+                <option selected disabled>-- Pilih --</option>
+                <option>97 (Al Qadr)</option>
+                <option>98 (Al Bayyinah)</option>
+                <option>99 (Al Zalzalah)</option>
+                <option>100 (Al 'Aadiyaat)</option>
+                <option>101 (Al Qaari'ah)</option>
+                <option>102 (At Takaatsur)</option>
+              </select>
+            </div>
+            <div>
+              <label>Nilai</label><br>
+              <input type="number" min="0" max="100" placeholder="0">
+            </div>
+            <div>
+              <label>Hafalan 9 Hadist Pendek</label><br>
+              <select>
+                <option selected disabled>-- Pilih --</option>
+                <option>Muslim Besaudara</option>
+                <option>Hadits Kebaikan</option>
+                <option>Sampaikanlah walau satu ayat</option>
+                <option>Menuntut ilmu itu wajib bagi setiap muslim</option>
+                <option>Muslim bersaudara</option>
+                <option>Hadits Keutamaan Senyum</option>
+                <option> Hadits Allah Maha Indah</option>
+                <option>Menuntut Ilmu</option>
+                <option>Hadits Sholat Tepat Waktunya</option>
+              </select>        
+            </div>
+            <div>
+              <label>Nilai</label><br>
+              <input type="number" min="0" max="100" placeholder="0">
+            </div>
+            <div>
+              <label>Hafalan 9 Doa Harian</label><br>
+              <select>
+                <option selected disabled>-- Pilih --</option>
+                <option>Doa masuk mesjid</option>
+                <option>Doa keluar mesjid</option>
+                <option>Doa mau bewrudhu</option>
+                <option>Doa setelah berwudhu</option>
+                <option>Doa mendengar adzan</option>
+                <option>Doa setelah azan</option>
+                <option>Doa setelah iqomah</option>
+                <option>Doa ketika turun hujan</option>
+                <option>Doa setelah hujan</option>
+              </select>                  
+            </div>
+            <div>
+                <label>Nilai</label><br>
+                <input type="number" min="0" max="100" placeholder="0">
+            </div>
+            <div>
+              <label>Mengenal macam-macam najis</label><br>
+              <select>
+                <option selected disabled>-- Pilih --</option>
+                <option>Mukhofafah (Ringan)</option>
+                <option>Mutawasitoh (Sedang)</option>
+                <option>Mugolodoh (Berat)</option>
+                <option>Mengetahui cara membersihkanya</option>
+              </select>  
+            </div>
+            <div>
+                <label>Nilai</label><br>
+                <input type="number" min="0" max="100" placeholder="0">
+            </div>
+            <div>
+                <label>Mengenal macam-macam hadas</label><br>
+                <select>
+                  <option selected disabled>-- Pilih --</option>
+                  <option>Hadas besar</option>
+                  <option>Hadas Kecil</option>
+                  <option>Mengetahui cara membersihkanya</option>                                 
+                </select>
+            </div>            
+            <div>
+              <label>Nilai</label><br>
+              <input type="number" min="0" max="100" placeholder="0">
+          </div>
+          <div>
+              <label>Mengenal 5 kisah sahabat</label><br>
+              <select>
+                <option selected disabled>-- Pilih --</option>
+                <option>Hamzah bin Abdul Mutthalib : Singa Allah dan panglima syuhada</option>
+                <option>Abdullah bin Mas'ud : Yang pertama kali mengumandangkan al-Quran dengan suara merdu</option>
+                <option>Hudzaifah Ibnul Yaman : Seteru kemunafikan, kawan keterbukaan</option>
+                <option>Ammar bin Yasir : Seorang tokoh penghuni surga</option>
+                <option>Ubadah bin Shamit : Tokoh yang gigih menentang penyelewengan</option>                  
+              </select>
+          </div>
+          <div>
+              <label>Nilai</label><br>
+              <input type="number" min="0" max="100" placeholder="0">
+          </div>
+          <div>
+              <label>Mengenal batasan aurat laki-laki</label><br>
+              <select>
+                <option selected disabled>-- Pilih --</option>
+                <option>Mengenal batasan aurat laki-laki</option>                                    
+              </select>
+          </div>
+          <div>
+              <label>Nilai</label><br>
+              <input type="number" min="0" max="100" placeholder="0">
+          </div>
+          <div>
+              <label>Menutup Aurat</label><br>
+              <select>
+                <option selected disabled>-- Pilih --</option>
+                <option>Menutup Aurat</option>
+              </select>
+          </div>
+          <div>
+              <label>Nilai</label><br>
+              <input type="number" min="0" max="100" placeholder="0">
+          </div>
+          <div>
+              <label>Hapal nama-nama 25 nabi</label><br>
+              <select>
+                <option selected disabled>-- Pilih --</option>
+                <option>Adam</option>
+                <option>Idris</option>
+                <option>Nuh</option>
+                <option>Hud</option>
+                <option>Sholeh</option>
+                <option>Ibrohim</option>
+                <option>Luth</option>
+                <option>Ismail</option>
+                <option>Ishaq</option>
+                <option>Ya'kub</option>
+                <option>Yusuf</option>
+                <option>Ayyub</option>
+                <option>Suaib</option>
+                <option>Musa</option>
+                <option>Harun</option>
+                <option>Zulkifli</option>
+                <option>Daud</option>
+                <option>Sulaiman</option>
+                <option>Ilyas</option>
+                <option>Ilyasa</option>
+                <option>Yunus</option>
+                <option>Zakariya</option>
+                <option>Yahya</option>
+                <option>Isa</option>
+                <option>Muhammad</option>                                    
+              </select>
+          </div>
+          <div>
+              <label>Nilai</label><br>
+              <input type="number" min="0" max="100" placeholder="0">
+          </div>
+          <div>
+              <label>Hapal sifat-sifat nabi</label><br>
+              <select>
+                <option selected disabled>-- Pilih --</option>
+                <option>Sidik</option>
+                <option>Tabligh</option>
+                <option>Amanah</option>
+                <option>Fathonah</option>
+              </select>
+          </div>
+          <div>
+              <label>Nilai</label><br>
+              <input type="number" min="0" max="100" placeholder="0">
+          </div>
+          <div>
+            <label>Mengenal 15 kisah sahabat</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Khabbab bin Arats: Guru besar dalam berqurban</option>
+              <option>Abu 'Ubaidah Ibnul Jarrah : Orang kepercayaan ummat</option>
+              <option>Utsman bin Mazh'un : Yang pernah mengabaikan kesenangan hidup duniawi</option>
+              <option>Zaid bin Haritsah : Tak ada orang yang lebih dicintainya daripada Rasulullah</option>
+              <option>Jafar bin Abi Thalib: Jasmani -maupun perangainya mirip Rasulullah</option>
+              <option>Abdullah ibnu Rawahah : Yang bersemboyan 'Wahai diri jika kau tidak gugur di medan juang kau tetap akan mati walau di atas ranjang</option>
+              <option>Khalid ibnul Walid : Pedang Allah yang selalu waspada</option>
+              <option>Qeis bin Sa'ad bin Ubadah : Ahli tipu muslihat dari Arab</option>
+              <option>Umeir bin Wahab : Jagoan Quraisy yang terbaik</option>
+              <option>Abu Darda : Ahli hikmat dan budiman</option>
+              <option>Zaid ibnul Khatthab : Rajawali pertempuran Yamamah</option>
+              <option>Thalhah bin Ubaidillah : Pahlawan Perang Uhud</option>
+              <option>Zubair bin Awwam : Pembela Rasulullah</option>
+              <option>Khubaib bin 'Adi : Pahlawan syahid di kayu salib</option>
+              <option>Umeir bin Sa'ad : Tokoh yang tiada duanya</option>
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+          </div> 
+          </form>
+            
+    
+        <h3 style="color:red;">Karakter</h3>
+        <form>                       
+          <div class="form-group">
+          <div>
+              <label>Mulai melakukan shaum wajib/Sunah (3/bulan)</label><br>
+              <select>
+                <option selected disabled>-- Pilih --</option>
+                <option>Mulai melakukan shaum wajib/Sunah (3/bulan)</option>
+              </select>
+          </div>
+          <div>
+              <label>Nilai</label><br>
+              <input type="number" min="0" max="100" placeholder="0">
+          </div>
+          <div>
+              <label>Mulai menjaga pergaulan/bermain</label><br>
+              <select>
+                <option selected disabled>-- Pilih --</option>
+                <option>Mulai menjaga pergaulan/bermain</option>
+              </select>
+          </div>
+          <div>
+              <label>Nilai</label><br>
+              <input type="number" min="0" max="100" placeholder="0">
+          </div>
+          <div>
+              <label>Mulai membantu pekerjaan orang tua</label><br>
+              <select>
+                <option selected disabled>-- Pilih --</option>
+                <option>Mulai membantu pekerjaan orang tua</option>
+              </select>
+          </div>
+          <div>
+              <label>Nilai</label><br>
+              <input type="number" min="0" max="100" placeholder="0">
+          </div>
+          <div>
+            <label>Mulai berdisiplin dalam kegiatan</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Mulai berdisiplin dalam kegiatan</option>
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+        <div>
+          <label>Mulai tidur sendiri (terpisah dari orang tua)</label><br>
+          <select>
+            <option selected disabled>-- Pilih --</option>
+            <option>Mulai tidur sendiri (terpisah dari orang tua)</option>
+          </select>
+      </div>
+      <div>
+          <label>Nilai</label><br>
+          <input type="number" min="0" max="100" placeholder="0">
+      </div>
+        </div>          
+        </form>           
+          </div>
+          
+          <div id="kelas4" class="form-section">
+            <h2 style="color:blue;">Kelas 4</h2>
+            <h3 style="color:red;">Pengetahuan Diniyah</h3>
+            <form>                       
+              <div class="form-group">
+              <div>
+                <label>Hapal JUZ 30 ( surat Al 'Alaq s/d Al A'laa)</label><br>
+                <select>
+                  <option selected disabled>-- Pilih --</option>
+                  <option>87 (Al A'laa)</option>
+                  <option>88 (Al Ghaasyiyah)</option>
+                  <option>89 (Al Fajr)</option>
+                  <option>90 (Al Balad)</option>
+                  <option>91 (Asy Syams)</option>
+                  <option>92 (Al Lail)</option>
+                  <option>93 (Adh Dhuha)</option>
+                  <option>94 (Alam Nasyrah)</option>
+                  <option>95 (At Tiin)</option>
+                  <option>96 (Al 'Alaq)</option>
+                </select>
+              </div>
+              <div>
+                <label>Nilai</label><br>
+                <input type="number" min="0" max="100" placeholder="0">
+              </div>
+              <div>
+                <label>Hapal minimal 4 hadist (Arbain 1-4)</label><br>
+                <select>
+                  <option selected disabled>-- Pilih --</option>
+                  <option>Tentang Niat</option>
+                  <option>Tentang Islam</option>
+                  <option>Tentang Bangunan Islam</option>
+                  <option>Tentang Kejadian Manusia</option>
+                </select>
+              </div>
+              <div>
+                <label>Nilai</label><br>
+                <input type="number" min="0" max="100" placeholder="0">
+              </div>
+              <div>
+                <label>Hapal 15 do'a harian (26-40)</label><br>
+                <select>
+                  <option selected disabled>-- Pilih --</option>
+                  <option>Doa Ketika bersin</option>
+                  <option>Doa mohon diberi kemudahan</option>
+                  <option>Doa kelapangan hati</option>
+                  <option>Doa mohon jodoh dan keturunan yang baik</option>
+                  <option>Doa terhindar dari godaan syaitan</option>
+                  <option>Doa mensyukuri ni'mat</option>
+                  <option>Doa mohon keluasan rahmat</option>
+                  <option>Doa selamat dari kedengkian</option>
+                  <option>Doa bertawakkal kepada Allah</option>
+                  <option>Doa melihat keajaiban alam</option>
+                  <option>Doa agar diberi hikmah</option>
+                  <option>Doa agar diberi bangunan indah di surga</option>
+                  <option>Doa mohon kedudukan yang mulia</option>
+                  <option>Doa pembersih seluruh dosa</option>
+                  <option>Doa teguh pendirian</option>
+                </select>
+              </div>
+              <div>
+                <label>Nilai</label><br>
+                <input type="number" min="0" max="100" placeholder="0">
+              </div>
+              <div>
+                <label>Mengetahui ilmu tazwid</label><br>
+                <select>
+                  <option selected disabled>-- Pilih --</option>
+                  <option>Mengetahui cara membaca Al Qur'an dengan makhrajul huruf yang benar</option>
+                  <option>Mengetahui hukum Mad dalam membaca Al Qur'an</option>
+                  <option>Mengetahui hukum nun mati dan tanwin dalam membaca Al Qur'an</option>                  
+                </select>
+              </div>
+              <div>
+                <label>Nilai</label><br>
+                <input type="number" min="0" max="100" placeholder="0">
+              </div>
+              <div>
+                <label>Mengetahui ilmu tazwid</label><br>
+                <select>
+                  <option selected disabled>-- Pilih --</option>
+                  <option>Ilyas as</option>
+                  <option>Ilyasa as</option>
+                  <option>Yunus as</option>
+                  <option>Zakariya as</option>
+                  <option>Yahya as</option>
+                  <option>Isa as</option>
+                  <option>Kelahiran Nabi Muhammad sampai masa pernikahan dengan Siti Khadijah</option>
+                  <option>Rasulullah saat menerima wahyu</option>
+                  <option>Masa-masa awal perjuangan Rasulullah</option>
+                  <option>Masa-masa hijrah Rasulullah</option>
+                  <option>Nabi Muhammad membangun Kota Madinah</option>
+                  <option>Perang Badar</option>
+                  <option>Perang Uhud</option>
+                  <option>Perang Tabuk</option>
+                  <option>Perang Khandak</option>
+                  <option>Perjanjian Hudaibiyah</option>
+                  <option>Perang Hunain</option>
+                  <option>Fathul Mekah</option>
+                  <option>Haji Wada</option>
+                  <option>Wafatnya Nabi Muhammad</option>                  
+                </select>
+              </div>
+              <div>
+                <label>Nilai</label><br>
+                <input type="number" min="0" max="100" placeholder="0">
+              </div>
+              <div>
+                <label>Mengetahui ringkasan kisah khulafaurrasidin</label><br>
+                <select>
+                  <option selected disabled>-- Pilih --</option>
+                  <option>Abu Bakar</option>
+                  <option>Umar</option>
+                  <option>Utsman</option>
+                  <option>Ali</option>
+                </select>
+            </div>
+            <div>
+                <label>Nilai</label><br>
+                <input type="number" min="0" max="100" placeholder="0">
+            </div>
+            <div>
+              <label>Mengetahui  mana mahram mana bukan</label><br>
+              <select>
+                <option selected disabled>-- Pilih --</option>
+                <option>Mengetahui nasab/ silsilah keluarganya</option>
+                <option>Mengetahui adab bergaul dengan yang bukan mahram</option>
+                <option>Mengetahui batasan adab dengan saudara senasab</option>
+              </select>
+          </div>
+          <div>
+              <label>Nilai</label><br>
+              <input type="number" min="0" max="100" placeholder="0">
+          </div>
+          <div>
+            <label>Mengetahui cara membersihkan najis</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Mengetahui macam-macam najis (ringan, sedang, dan berat)</option>
+              <option>Mengetahui cara membersihkan hadas</option>
+              <option>Mengenal macam-macam hadas (kecil dan besar)</option>
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+            </div> 
+            </form>              
+      
+          <h3 style="color:red;">Karakter</h3>
+          <form>                       
+            <div class="form-group">
+              <div>
+                  <label>Terbiasa baca al-qur'an dengan benar</label><br>
+                  <select>
+                    <option selected disabled>-- Pilih --</option>
+                    <option>Lancar membaca Al Qur'an</option>
+                    <option>Membaca Al Qur'an dengan tartil</option>
+                  </select>
+              </div>
+              <div>
+                  <label>Nilai</label><br>
+                  <input type="number" min="0" max="100" placeholder="0">
+              </div>
+              <div>
+                <label>Terbiasa melaksanakan sholat wajib</label><br>
+                <select>
+                  <option selected disabled>-- Pilih --</option>
+                  <option>Melakukan sholat wajib 5 waktu</option>
+                  <option>Melakukan sholat wajib tepat waktu</option>
+                  <option>Melakukan sholat wajib secara mandiri</option>
+                </select>
+            </div>
+            <div>
+                <label>Nilai</label><br>
+                <input type="number" min="0" max="100" placeholder="0">
+            </div>
+            <div>
+              <label>Terbiasa sholat berjamaah</label><br>
+              <select>
+                <option selected disabled>-- Pilih --</option>
+                <option>Mengetahui keutamaan sholat berjama'ah</option>
+                <option>Terbiasa melakukan sholat berjama'ah tanpa disuruh</option>
+              </select>
+          </div>
+          <div>
+              <label>Nilai</label><br>
+              <input type="number" min="0" max="100" placeholder="0">
+          </div>
+          <div>
+            <label>Terbiasa shaum wajib/sunat</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Terbiasa melakukan sahur sebelum adzan subuh</option>
+              <option>Mengetahui adab-adab shaum</option>
+              <option>Terbiasa melakukan shaum wajib</option>
+              <option>Mengetahui hal-hal yang dapat membatalkan shaum</option>
+              <option>Belajar melakukan shaum sunnah</option>
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>              
+              </div>
+          </form>
+      
+          <h3 style="color:red;">Skill</h3>
+          <form>                       
+              <div class="form-group">
+              <div>
+                  <label>Terampil membaca, menulis dan berhitung</label><br>
+                  <select>
+                    <option selected disabled>-- Pilih --</option>
+                    <option>Membaca dengan lancar dan intonasi yang tepat</option>
+                    <option>Mampu menuliskan kembali isi buku yang telah dibaca (membuat resume sederhana)</option>
+                    <option>Mampu berhitung campuran dan menyelesaikan soal-soal hitungan</option>
+                    <option>Terbiasa membaca buku</option>
+                    <option>Mampu menyampaikan isi buku yang telah dibaca</option>
+                  </select>
+              </div>
+              <div>
+                  <label>Nilai</label><br>
+                  <input type="number" min="0" max="100" placeholder="0">
+              </div>
+              </div>            
+              </form>
+            </div>
+
+            <div id="kelas5" class="form-section">
+              <h2 style="color:blue;">Kelas 5</h2>
+              <h3 style="color:red;">Pengetahuan Diniyah</h3>
+              <form>                       
+                <div class="form-group">
+                <div>
+                  <label>Hapal JUZ 30 + Al Mursalaat ( surat Ath Thaariq s/d Al Mursalaat)</label><br>
+                  <select>
+                    <option selected disabled>-- Pilih --</option>
+                    <option>77 ( Al Mursalaat)</option>
+                    <option>78 (An Naba')</option>
+                    <option>79 (An Nazi'at)</option>
+                    <option>80 ('Abasa)</option>
+                    <option>81 ( At Takwir)</option>
+                    <option>82 ( Al Infithaar)</option>
+                    <option>83 (Al Muthaffifin)</option>
+                    <option>84 (Al Insyiqaaq)</option>
+                    <option>85 (Al Buruuj)</option>
+                    <option>86 (Ath Thaariq)</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Nilai</label><br>
+                  <input type="number" min="0" max="100" placeholder="0">
+                </div>
+                <div>
+                  <label>Hapal minimal 4 hadist (Arbain 5-8)</label><br>
+                  <select>
+                    <option selected disabled>-- Pilih --</option>
+                    <option>Tentang larangan mengadakan urusan tanpa menyandarkan pd Rosul</option>
+                    <option>Tentang hati - hati terhadap barang subhat</option>
+                    <option>Tentang islam agama nasehat</option>
+                    <option>Tentang memerangi manusia sampai bersyahadah</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Nilai</label><br>
+                  <input type="number" min="0" max="100" placeholder="0">
+                </div>
+                <div>
+                  <label>Hapal 15 do'a harian (41-55)</label><br>
+                  <select>
+                    <option selected disabled>-- Pilih --</option>
+                    <option>Doa menjenguk orang sakit</option>
+                    <option>Doa naik kendaraan laut</option>
+                    <option>Doa naik kendaraan laut</option>
+                    <option>Doa minta perlindungan dari godaan setan</option>
+                    <option>Doa ketika mendapatkan kebaikan dari orang lain</option>
+                    <option>Doa Memohon dipelihara dari siksa neraka</option>
+                    <option>Doa memohon dimatikan dan dihidupkan sebagai muslim</option>
+                    <option>Doa memohon dicukupi dan dilindungi</option>
+                    <option>Doa susah tidur</option>
+                    <option>Doa ketika bermimpi baik</option>
+                    <option>Doa ketika bermimpi buruk</option>
+                    <option>Doa mau belajar</option>
+                    <option>Doa kafarah majlis</option>
+                    <option>Doa masuk pasar</option>
+                    <option>Doa keluar pasar</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Nilai</label><br>
+                  <input type="number" min="0" max="100" placeholder="0">
+                </div>
+                <div>
+                  <label>Mulai mengenal terjemah al-qur'an</label><br>
+                  <select>
+                    <option selected disabled>-- Pilih --</option>
+                    <option>Mengetahui adab-adab membaca Al Qur'an</option>
+                    <option>Membaca Al Qur'an dengan terjemahnya</option>
+                    <option>Mengenal terjemah Al Qur'an secara Lafdziyah</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Nilai</label><br>
+                  <input type="number" min="0" max="100" placeholder="0">
+                </div>
+                <div>
+                  <label>Mengenal kisah 24 sahabat rasul</label><br>
+                  <select>
+                    <option selected disabled>-- Pilih --</option>
+                    <option>Abu Bakar Ash-Shidiq</option>
+                    <option>Umar Bin Khattab</option>
+                    <option>Utsman bin Affan</option>
+                    <option>Ali  bin Abi Thalib</option>
+                    <option>Abdullah ibnu Rawahah : Yang bersemboyan 'Wahai diri jika kau tidak gugur di medan juang kau tetap akan mati walau di atas ranjang.'</option>
+                    <option>Khalid ibnul Walid : Pedang Allah yang selalu waspada</option>
+                    <option>Qeis bin Sa'ad bin'Ubadah : Ahli tipu muslihat dari Arab</option>
+                    <option>Umeir bin Wahab : Jagoan Quraisy yang terbaik</option>
+                    <option>Abu Darda : Ahli hikmat dan budiman</option>
+                    <option>Zaid ibnul Khatthab : Rajawali pertempuran Yamamah</option>
+                    <option>Thalhah bin Ubaidillah : Pahlawan Perang Uhud</option>
+                    <option>Zubair bin Awwam : Pembela Rasulullah</option>
+                    <option>Khubaib bin 'Adi : Pahlawan syahid di kayu salib</option>
+                    <option>Umeir bin Sa'ad : Tokoh yang tiada duanya</option>
+                    <option>Zaid bin Tsabit : Penghimpun kitab suci al-Qur'an</option>
+                    <option>Khalid bin Sa'id bin 'Ash : Pasukan berani mati angkatan pertama</option>
+                    <option>Abu Ayyub al-Anshari : Pejuang diwaktu senang atau susah</option>
+                    <option>Abbas bin Abdul Muthalib : Pengurus air minum Mekah dan Madinah</option>
+                    <option>Al-Barra bin Malik : ” Allah dan Surga “</option>
+                    <option>Utbah bin Ghazwan : Lusa tidak ada pejabat mirip saya</option>
+                    <option>Tsabit bin Qeis : Juru bicara Rasulullah</option>
+                    <option>Usaid bin Hudhair : Pahlawan hari Saqifah</option>
+                    <option>Abdurrahman bin Auf : Harta selalu datang</option>
+                    <option selected disabled>-- Pilih --</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Nilai</label><br>
+                  <input type="number" min="0" max="100" placeholder="0">
+                </div>
+                <div>
+                  <label>Mengetahui dasar-dasar hukum haid</label><br>
+                  <select>
+                    <option selected disabled>-- Pilih --</option>
+                    <option>Mengenal ciri-ciri darah haid</option>
+                    <option>Mengetahui cara membersihkan darah Haid</option>
+                    <option>Mengetahui hal-hal yang tidak boleh dilakukan ketika haid</option>
+                    <option>Mengetahui ciri-ciri baligh</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Nilai</label><br>
+                  <input type="number" min="0" max="100" placeholder="0">
+                </div>
+                <div>
+                  <label>Mengetahui cara membersihkan Hadas</label><br>
+                  <select>
+                    <option selected disabled>-- Pilih --</option>
+                    <option>Cara membersihkan hadas besar</option>
+                    <option>Cara membersihkan hadas kecil</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Nilai</label><br>
+                  <input type="number" min="0" max="100" placeholder="0">
+                </div>
+              </div> 
+              </form>                
+        
+            <h3 style="color:red;">Karakter</h3>
+            <form>                       
+              <div class="form-group">
+                <div>
+                    <label>Terbiasa menutup aurat dengan rapih</label><br>
+                    <select>
+                      <option selected disabled>-- Pilih --</option>
+                      <option>Mengetahui batasan aurat laki-laki dan perempuan</option>
+                      <option>Terbiasa memakai pakaian yang menutup aurat</option>
+                      <option>Memakai pakaian yang bersih dan rapih</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Nilai</label><br>
+                    <input type="number" min="0" max="100" placeholder="0">
+                </div>
+                <div>
+                  <label>Terbiasa menjaga pergaulan/bermain</label><br>
+                  <select>
+                    <option selected disabled>-- Pilih --</option>
+                    <option>Mengetahui adab dalam bergaul dengan teman sejenis</option>
+                    <option>Mengetahui adab dalam bergaul dengan teman lawan jenis</option>
+                    <option>Memilih teman yang baik</option>
+                    <option>Mengetahui adab terhadap orang yang lebih tua dan orang yang lebih muda</option>
+                  </select>
+              </div>
+              <div>
+                  <label>Nilai</label><br>
+                  <input type="number" min="0" max="100" placeholder="0">
+              </div>
+              <div>
+                <label>Terbiasa membantu pekerjaan orang tua</label><br>
+                <select>
+                  <option selected disabled>-- Pilih --</option>
+                  <option>Membantu mengerjakan berbagai pekerjaan rumah (mencuci pakaian, mencuci piring, merapihkan rumah, dll)</option>
+                  <option>Ringan Tangan Menjalankan Perintah Orang Tua</option>
+                  <option>Berbuat baik kepada orang tua</option>
+                </select>
+            </div>
+            <div>
+                <label>Nilai</label><br>
+                <input type="number" min="0" max="100" placeholder="0">
+            </div>
+            <div>
+              <label>Disiplin waktu</label><br>
+              <select>
+                <option selected disabled>-- Pilih --</option>
+                <option>Mengetahui tugas dan kewajiban seorang anak</option>
+                <option>Mengetahui tugas dan kewajiban seorang murid</option>
+                <option>Mengerjakan tugas sekolah tepat waktu</option>
+                <option>Masuk sekolah tepat waktu</option>
+                <option>Mentaati peraturan sekolah</option>
+              </select>
+          </div>
+          <div>
+              <label>Nilai</label><br>
+              <input type="number" min="0" max="100" placeholder="0">
+          </div>              
+                </div>
+            </form>
+        
+            <h3 style="color:red;">Skill</h3>
+            <form>                       
+                <div class="form-group">
+                <div>
+                    <label>Terampil baca tulis Al-qur'an sesuai ilmu tajwid</label><br>
+                    <select>
+                      <option selected disabled>-- Pilih --</option>
+                      <option>Terbiasa membaca Al Qur'an dengan tartil</option>
+                      <option>Bisa menulis Al Qur'an sesuai kaidah</option>
+                      <option>Mulai belajar imla Al Qur'an</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Nilai</label><br>
+                    <input type="number" min="0" max="100" placeholder="0">
+                </div>
+                </div>            
+                </form>
+              </div>
+
+              <div id="kelas6" class="form-section">
+                <h2 style="color:blue;">Kelas 6</h2>
+                <h3 style="color:red;">Pengetahuan Diniyah</h3>
+                <form>                       
+                  <div class="form-group">
+                  <div>
+                    <label>Hapal JUZ 29 ( surat Al Insaan s/d Al Mulk)</label><br>
+                    <select>
+                      <option selected disabled>-- Pilih --</option>
+                      <option>67 (Al Mulk)</option>
+                      <option>68 (Al Qalam)</option>
+                      <option>69 (Al Haaqqah)</option>
+                      <option>70 (Al Ma'aarij)</option>
+                      <option>71 (Nuh)</option>
+                      <option>72 (Al Jin)</option>
+                      <option>73 (Al Muzzammil)</option>
+                      <option>74 (Al Muddatstsir)</option>
+                      <option>75 (Al Qiyaamah)</option>
+                      <option>76 ( Al Insaan)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label>Nilai</label><br>
+                    <input type="number" min="0" max="100" placeholder="0">
+                  </div>
+                  <div>
+                    <label>Hapal minimal 2 hadist (Arbain 8-10)</label><br>
+                    <select>
+                      <option selected disabled>-- Pilih --</option>
+                      <option>Tentang larangan banyak bertanya tentang perintah dan larangan</option>
+                      <option>Tentang makan yang baik dan beramal sholeh</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Nilai</label><br>
+                    <input type="number" min="0" max="100" placeholder="0">
+                </div>
+                <div>
+                  <label>Hapal 17 do'a harian (56-72)</label><br>
+                  <select>
+                    <option selected disabled>-- Pilih --</option>
+                    <option>Doa taubatan nasuha</option>
+                    <option>Doa ketentraman</option>
+                    <option>Doa pembuka rizki</option>
+                    <option>Doa tabah menghadapi lawan</option>
+                    <option>Doa diberi keteguhan iman</option>
+                    <option>Doa kekuatan iman</option>
+                    <option>Doa usnul khâtimah</option>
+                    <option>Doa penyesalan/istighfar nabi Adam</option>
+                    <option>Doa mohon keadilan</option>
+                    <option>Doa Mohon keselamatan</option>
+                    <option>Doa Mohon perlindungan</option>
+                    <option>Doa mohon ampunan</option>
+                    <option>Doa mohon tempat yang baik</option>
+                    <option>Doa ketentraman</option>
+                    <option>Doa agar terhindar dari tipu daya orang-orang zhalim</option>
+                    <option>Doa agar terlepas dari kesulitan/istighfar nabi Yunus</option>
+                    <option>Doa agar diberi cahaya dan ampunans</option>
+                  </select>
+              </div>
+              <div>
+                  <label>Nilai</label><br>
+                  <input type="number" min="0" max="100" placeholder="0">
+              </div>
+              <div>
+                <label>Hapal nama-nama surat Al-qur'an</label><br>
+                <select>
+                  <option selected disabled>-- Pilih --</option>
+                  <option>Hafal jumlah surat dalam Al Qur'an</option>
+                  <option>Hafal jumlah juz dalam Al Qur'an</option>
+                  <option>Mengetahui surat-surat Makiyah dan Madaniyah</option>
+                </select>
+            </div>
+            <div>
+                <label>Nilai</label><br>
+                <input type="number" min="0" max="100" placeholder="0">
+            </div>
+            <div>
+              <label>Mengetahui ciri-ciri baligh</label><br>
+              <select>
+                <option selected disabled>-- Pilih --</option>
+                <option>Mengetahui ciri-ciri baligh</option>
+                <option>Mengetahui tanda-tanda sudah baligh</option>
+                <option>Mengetahui adab pergaulan dengan teman lawan jenis</option>
+                <option>Mengetahui kewajiban-kewajiban seorang muslim setelah baligh</option>
+              </select>
+          </div>
+          <div>
+              <label>Nilai</label><br>
+              <input type="number" min="0" max="100" placeholder="0">
+          </div>
+          <div>
+            <label>Mengenal kisah 24 sahabat rasul</label><br>
+            <select>
+              <option selected disabled>-- Pilih --</option>
+              <option>Abu Jabir Abdullah bin Amr bin Haram : Seseorang yang dinaungi malaikat</option>
+              <option>Amr ibnul Jamuh : Dengan pincangku, ku rebut surga</option>
+              <option>Habib bin Zaid : Lambang cinta kasih dan pengorbanan</option>
+              <option>Ubai bin Ka'ab : Selamat ilmu yang engkau capai</option>
+              <option>Sa'ad bin Mu'adz : Kebahagiaan bagimu, wahai Abu Umar</option>
+              <option>Sa'ad bin Ubadah : Pembawa bendera Anshar</option>
+              <option>Usamah bin Zaid : Kesayangan, putra dari kesayangan</option>
+              <option>Abdurrahman bin Abi Bakar : Pahlawan sampai akhir hayat</option>
+              <option>Abdullah bin 'Amr bin 'Aash : Tekun beribadat dan bertaubat</option>
+              <option>Abu Sufyan bin Harits : Habis gelap terbitlah terang</option>
+              <option>Imran bin Hushain : Menyerupai malaikat</option>
+              <option>Salamah bin al-Akwa : Pahlawan pasukan jalan kaki</option>
+              <option>Abdullah bin Zubair : Tokoh pengejar mati shahid</option>
+              <option>Abdullah bin Abbas : Kyai umat kini</option>
+              <option>Abbad bin Bisyir : Disertai cahaya Allah</option>
+              <option>Suheil bin 'Amar : Kumpulan orang terbebas, kumpulan pahlawan</option>
+              <option>Abu Musa al-Asy'ari : Ikhlas, setelah itu yang terjadi terjadilah</option>
+              <option>Thufeil bin 'Amr ad-Dausi : Suatu fitrah yang cerdas</option>
+              <option>'Amr bin 'Ash : Pembebas Mesir dari pasukan Romawi</option>
+              <option>Salim Maula Abu Hudzaifah : Sebaik-baik pemikul Al-Qur'an</option>
+              <option>Imam Muslim (lahir 204 H dan wafat 261 H)</option>
+              <option>Imam Tirmidzi (lahir 210 H dan wafat 279)</option>
+              <option>Imam Ibnu Majah (lahir 209 H dan wafat 273 H)</option>
+              <option>Imam Syafi'i (lahir 150 H dan wafat 204 H)</option>
+            </select>
+        </div>
+        <div>
+            <label>Nilai</label><br>
+            <input type="number" min="0" max="100" placeholder="0">
+        </div>
+                </div> 
+                </form>                  
+          
+              <h3 style="color:red;">Karakter</h3>
+              <form>                       
+                <div class="form-group">
+                  <div>
+                      <label>Terbiasa tidur terpisah dengan orang tua</label><br>
+                      <select>
+                        <option selected disabled>-- Pilih --</option>
+                        <option>Memahami adab-adab tidur</option>
+                        <option>Terbiasa tidur sendiri (terpisah dari orang tua)</option>
+                        <option>Mengetahui batasan adab dengan saudara senasab</option>
+                      </select>
+                  </div>
+                  <div>
+                      <label>Nilai</label><br>
+                      <input type="number" min="0" max="100" placeholder="0">
+                  </div>
+                  <div>
+                    <label>Mulai bertanggung jawab di setiap pekerjaan</label><br>
+                    <select>
+                      <option selected disabled>-- Pilih --</option>
+                      <option>Mengetahui karakter orang yang bertanggung jawab</option>
+                      <option>Bertanggung jawab atas tugas sekolah</option>
+                      <option>Bertanggung jawab atas tugas sebagai anak di rumah</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Nilai</label><br>
+                    <input type="number" min="0" max="100" placeholder="0">
+                </div>
+                <div>
+                  <label>Mengetahui adab masuk kamar orang tua</label><br>
+                  <select>
+                    <option selected disabled>-- Pilih --</option>
+                    <option>Mengetahui waktu-waktu yang terlarang memasuki kamar orang tua</option>
+                    <option>Mengetahui adab-adab ketika berada di kamar orang tua</option>
+                  </select>
+              </div>
+              <div>
+                  <label>Nilai</label><br>
+                  <input type="number" min="0" max="100" placeholder="0">
+              </div>              
+                  </div>
+              </form>
+          
+              <h3 style="color:red;">Skill</h3>
+              <form>                       
+                  <div class="form-group">
+                  <div>
+                      <label>Terampil berwudhu dengan tertib</label><br>
+                      <select>
+                        <option selected disabled>-- Pilih --</option>
+                        <option>Terbiasa melakukan gerakan wudhu dengan tertib dan benar</option>
+                        <option>Terbiasa membaca niat dan do'a berwudhu</option>
+                      </select>
+                  </div>
+                  <div>
+                      <label>Nilai</label><br>
+                      <input type="number" min="0" max="100" placeholder="0">
+                  </div>
+                  <div>
+                    <label>Terampil sholat dengan tertib</label><br>
+                    <select>
+                      <option selected disabled>-- Pilih --</option>
+                      <option>Terbiasa melakukan gerakan sholat dengan benar dan tertib</option>
+                      <option>Terbiasa membaca bacaan sholat dengan benar</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Nilai</label><br>
+                    <input type="number" min="0" max="100" placeholder="0">
+                </div>
+                  </div>            
+                  </form>
+                </div>
+
+                <div id="kelas7" class="form-section">
+                  <h2 style="color:blue;">Kelas 7</h2>
+                  <h3 style="color:red;">Pengetahuan Diniyah</h3>
+                  <form>                       
+                    <div class="form-group">
+                    <div>
+                      <label>Hapal Al-Qur'an minimal 1 zuz ( 28 )</label><br>
+                      <select>
+                        <option selected disabled>-- Pilih --</option>
+                        <option>58 (Al Mujaadilah)</option>
+                        <option>59 (Al Hasyr)</option>
+                        <option>60 (Al Mumtahanah)</option>
+                        <option>61 (Ash Shaff)</option>
+                        <option>62 (Al Jumu'ah)</option>
+                        <option>63 (Al Munaafiquun)</option>
+                        <option>64 (At Taghaabun)</option>
+                        <option>65 (Ath Thalaaq)</option>
+                        <option>66 (At Tahrim)</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Nilai</label><br>
+                      <input type="number" min="0" max="100" placeholder="0">
+                    </div>
+                    <div>
+                      <label>Hapal minimal 5 hadist ( Arbain 11-15 )</label><br>
+                      <select>
+                        <option selected disabled>-- Pilih --</option>
+                        <option>Tentang meninggalkan hal yg ragu</option>
+                        <option>Tentang meninggalkan sesuatu yg tidak berguna</option>
+                        <option>Tentang mencintai saudara</option>
+                        <option>Tentang haram darah orang yang sudah bersyahadat</option>
+                        <option>Tentang berkata baik atau diam</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Nilai</label><br>
+                      <input type="number" min="0" max="100" placeholder="0">
+                    </div>
+                    <div>
+                      <label>Hapal doa doa dalam Alquran (10 doa)</label><br>
+                      <select>
+                        <option selected disabled>-- Pilih --</option>
+                        <option>Albaqoroh 201</option>
+                        <option>Albaqoroh 250</option>
+                        <option>Ali Imron 8</option>
+                        <option>Ali Imron 16</option>
+                        <option>Ali Imron 193-194</option>
+                        <option>Al A'rof 23</option>
+                        <option>Al A'rof 47</option>
+                        <option>Al A'rof 89</option>
+                        <option>Yunus 85-86</option>
+                        <option>Hud 47</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Nilai</label><br>
+                      <input type="number" min="0" max="100" placeholder="0">
+                    </div>
+                    <div>
+                      <label>Memahami sirah rasul</label><br>
+                      <select>
+                        <option selected disabled>-- Pilih --</option>
+                        <option>Kearifan Nabi Muhammad Mewujudkan Perdamaian</option>
+                        <option>Kesuksesan Nabi Muhamad Melakukan Perubahan</option>
+                        <option>Khulafaurrasyidin cerminan Akhlak Rasulullah</option>
+                        <option>Dinasti Umayah Pelopor Kemajuan Peradabab Islam</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Nilai</label><br>
+                      <input type="number" min="0" max="100" placeholder="0">
+                    </div>
+                    <div>
+                      <label>Mengetahui kisah 25 nabi dan rasul</label><br>
+                      <select>
+                        <option selected disabled>-- Pilih --</option>
+                        <option>Mengetahui 25 nama nabi dan rosul</option>
+                        <option>Bisa menceritakan kembali kisah 25 nabi</option>
+                        <option>Mengambil hikmah dari setiap kisah nabi rosul</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Nilai</label><br>
+                      <input type="number" min="0" max="100" placeholder="0">
+                    </div>
+                    <div>
+                      <label>Mengetahui hukumnya hubungan laki-laki dan perempuan dalam islam</label><br>
+                      <select>
+                        <option selected disabled>-- Pilih --</option>
+                        <option>Mengetahui dasar hukum tentang hubungan antaera laki-laki dan perempuan dalam islam</option>
+                        <option>Menjelaskan batasan-batasan hubungan antara laki-laki dan perempuan dalam islam</option>
+                        <option>Menjelaskan orang yang melanggar hukum  hubungan antara laki-laki dan perempuan</option>
+                        <option>Menjelaskan kisah yag berhubungan dengan hijab</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Nilai</label><br>
+                      <input type="number" min="0" max="100" placeholder="0">
+                    </div>
+                    <div>
+                      <label>Memahami materi tauhid</label><br>
+                      <select>
+                        <option selected disabled>-- Pilih --</option>
+                        <option>AI-Ilmu</option>
+                        <option>AL-Iman</option>
+                        <option>AL-Islam</option>
+                        <option>AL-Ihsan</option>
+                        <option>Al-Qur'an</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Nilai</label><br>
+                      <input type="number" min="0" max="100" placeholder="0">
+                    </div>
+                    <div>
+                      <label>Menghayati bacaan wudhu & sholat</label><br>
+                      <select>
+                        <option selected disabled>-- Pilih --</option>
+                        <option>Mengetahui dasar hukum, syarat dan rukun tentang wudlu dan sholat</option>
+                        <option>Menjelaskan cara berwudlu dan gerakan sholat</option>
+                        <option>Menguraikan manfaat serta hikmah wudhu dan sholat</option>
+                        <option>Mampu mempraktekkan bacaan dan gerakan wudhu dan sholat sesuai dengan ketentuan</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Nilai</label><br>
+                      <input type="number" min="0" max="100" placeholder="0">
+                    </div>
+                    <div>
+                      <label>Mengetahui makhorijul huruf</label><br>
+                      <select>
+                        <option selected disabled>-- Pilih --</option>
+                        <option>Mengetahui semua huruf hijaiyah</option>
+                        <option>Mengetahui makhroj setiap huruf</option>
+                        <option>Bisa membaca alquran dengan makhroj yang benar</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Nilai</label><br>
+                      <input type="number" min="0" max="100" placeholder="0">
+                    </div>
+                  </div> 
+                  </form>                  
+            
+                <h3 style="color:red;">Karakter</h3>
+                <form>                       
+                  <div class="form-group">
+                    <div>
+                        <label>Menyadari bahwa dirinya sudah mukallaf (Baligh)</label><br>
+                        <select>
+                          <option selected disabled>-- Pilih --</option>
+                          <option>Mampu membedakan antara benar dan salah</option>
+                          <option>Bisa memposisikan diri siapa saya, darimana dan mau kemana</option>
+                          <option>Tidak mudah terpengaruh oleh pengaruh negatif</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Nilai</label><br>
+                        <input type="number" min="0" max="100" placeholder="0">
+                    </div>
+                    <div>
+                      <label>Berkarya (tetap di bawah pengawasan orang tua)</label><br>
+                      <select>
+                        <option selected disabled>-- Pilih --</option>
+                        <option>Membuat suatu produk sesuai dengan minat dan keahliannya</option>
+                        <option>Menemukan ide kreatif</option>
+                        <option>Menemukan penemuan sederhana</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Nilai</label><br>
+                      <input type="number" min="0" max="100" placeholder="0">
+                    </div>
+                    <div>
+                      <label>Menyadari pentingnya sifat sayang, hormat, tolong menolong</label><br>
+                      <select>
+                        <option selected disabled>-- Pilih --</option>
+                        <option>Saling berkasih sayang sesama teman dan lingkungan sekitarnya</option>
+                        <option>Membantu teman yang sedang kesusahan</option>
+                        <option>Saling berbagi makanan atau rejeki</option>
+                        <option>Membuang sampah pada tempatnya</option>
+                        <option>Menerapkan hidup go green</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Nilai</label><br>
+                      <input type="number" min="0" max="100" placeholder="0">
+                    </div>
+                    <div>
+                      <label>Tumbuh sikap percaya diri dan bertanggungjawab</label><br>
+                      <select>
+                        <option selected disabled>-- Pilih --</option>
+                        <option>Beerani menyampaikan pendapat dengan sopan dan santun</option>
+                        <option>Berani tampil (PD)</option>
+                        <option>Berani mengakui kesalahan dan bertaubat</option>
+                        <option>Berani bertanya</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Nilai</label><br>
+                      <input type="number" min="0" max="100" placeholder="0">
+                    </div>
+                    <div>
+                      <label>Mampu mengatur jadwal kegiatan</label><br>
+                      <select>
+                        <option selected disabled>-- Pilih --</option>
+                        <option>Datang ke sekolah tepat waktu</option>
+                        <option>Mengerjakan piket sekolah maupun asrama</option>
+                        <option>Selalu menerjakan PR dan tugas sekolah</option>
+                        <option>Tidak bermalas-malasan</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Nilai</label><br>
+                      <input type="number" min="0" max="100" placeholder="0">
+                    </div>                                  
+                    </div>
+                </form>
+            
+                <h3 style="color:red;">Skill</h3>
+                <form>                       
+                    <div class="form-group">
+                    <div>
+                        <label>Mampu membaca alqur'an sesuai tajwid dan makhorijul huruf</label><br>
+                        <select>
+                          <option selected disabled>-- Pilih --</option>
+                          <option>Mengetahui dasar hukum tentang membaca alquran dengan tajwid dan makhrojil huruf</option>
+                          <option>Menjelaskan cara membaca Alquuran dengan benar</option>
+                          <option>Menjelaskan pahala membaca alquran</option>
+                          <option>Menguraikan manfaat serta hikmah membaca alquran</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Nilai</label><br>
+                        <input type="number" min="0" max="100" placeholder="0">
+                    </div>
+                    <div>
+                      <label>Mampu menjadi imam dalam sholat</label><br>
+                      <select>
+                        <option selected disabled>-- Pilih --</option>
+                        <option>Mengetahui dasar hukum menjadi imam</option>
+                        <option>Mengetahui syarat menjadi imam dalam sholat</option>
+                        <option>Mengetahui tata cara menjadi imam dalam sholat</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Nilai</label><br>
+                      <input type="number" min="0" max="100" placeholder="0">
+                    </div><div>
+                      <label>Mampu memimpin do'a</label><br>
+                      <select>
+                        <option selected disabled>-- Pilih --</option>
+                        <option>Mengetahui adab dan tata cara berdo'a</option>
+                        <option>Mengetahui macam-macam do'a</option>
+                        <option>Mampu membaca doa di depan umum</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Nilai</label><br>
+                      <input type="number" min="0" max="100" placeholder="0">
+                    </div><div>
+                      <label>Mampu praktek sholat jenazah</label><br>
+                      <select>
+                        <option selected disabled>-- Pilih --</option>
+                        <option>Mengetahui dasar hukum sholat jenazah</option>
+                        <option>Mengetahui syarat dan rukunnya shalat jenazah</option>
+                        <option>Mengetahui tata cara shalat jenazah</option>
+                        <option>Mampu membaca bacaan sholat jenazah</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Nilai</label><br>
+                      <input type="number" min="0" max="100" placeholder="0">
+                    </div>
+                    </div>            
+                    </form>
+                  </div>
+
+                  <div id="kelas8" class="form-section">
+                    <h2 style="color:blue;">Kelas 8</h2>
+                    <h3 style="color:red;">Pengetahuan Diniyah</h3>
+                    <form>                       
+                      <div class="form-group">
+                      <div>
+                        <label>Hapal Al-Qur'an minimal 1 zuz ( 27)</label><br>
+                        <select>
+                          <option selected disabled>-- Pilih --</option>
+                          <option>51 (Az Zariyat) 1-30</option>
+                          <option>52 (At Tuur)</option>
+                          <option>53 (An Najm)</option>
+                          <option>54 (Al Qamar)</option>
+                          <option>55 (Ar Rahman)</option>
+                          <option>56 (Al Waqi'ah)</option>
+                          <option>57 (Al Hadid)</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label>Nilai</label><br>
+                        <input type="number" min="0" max="100" placeholder="0">
+                      </div>
+                      <div>
+                        <label>Hapal minimal 5 hadist ( Arbain 16-20 )</label><br>
+                        <select>
+                          <option selected disabled>-- Pilih --</option>
+                          <option>Tentang larangan marah</option>
+                          <option>Tentang memotong hewan kurban</option>
+                          <option>Tringi keburukan dg kebaikan</option>
+                          <option>Tentang menjaga Allah</option>
+                          <option>Tentang menjaga malu</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label>Nilai</label><br>
+                        <input type="number" min="0" max="100" placeholder="0">
+                      </div>
+                      <div>
+                        <label>Hapal doa doa dalam Alquran (10 doa)</label><br>
+                        <select>
+                          <option selected disabled>-- Pilih --</option>
+                          <option>Ibrohim 41-42</option>
+                          <option>Al Isro 80</option>
+                          <option>Al Kahfi 10</option>
+                          <option>Toha 25-28</option>
+                          <option>Al Anbiya 89, Ali Imron 38</option>
+                          <option>Almu'minun 97-98</option>
+                          <option>Al Furqon 65</option>
+                          <option>An Namal 19</option>
+                          <option>Al Mukmin 7-8</option>
+                          <option>Al Hasyr 10</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label>Nilai</label><br>
+                        <input type="number" min="0" max="100" placeholder="0">
+                      </div>
+                      <div>
+                        <label>Mengetahui jenis-jenis dosa besar</label><br>
+                        <select>
+                          <option selected disabled>-- Pilih --</option>
+                          <option>Mengetahui pengertian dosa besar</option>
+                          <option>Mengetahui macam-macam dosa besar</option>
+                          <option>Mengetahui hal-hal yang akan mendekatkan diri kepada dosa besar</option>
+                          <option>Mengetahui dasar hukum macam-macam dosa besar</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label>Nilai</label><br>
+                        <input type="number" min="0" max="100" placeholder="0">
+                      </div>
+                      <div>
+                        <label>Mengetahui ushul fiqih dasar</label><br>
+                        <select>
+                          <option selected disabled>-- Pilih --</option>
+                          <option>Mengetahui definisi fiqih siasah</option>
+                          <option>Mengetahui ruang lingkup fiqih siasah</option>
+                          <option>Mengetahui tujuan dan kegunaan fiqih siasah</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label>Nilai</label><br>
+                        <input type="number" min="0" max="100" placeholder="0">
+                      </div>
+                      <div>
+                        <label>Mengetahui ciri-ciri baligh</label><br>
+                        <select>
+                          <option selected disabled>-- Pilih --</option>
+                          <option>Mengetahui dan memahami ciri-ciri mukallaf/baligh</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label>Nilai</label><br>
+                        <input type="number" min="0" max="100" placeholder="0">
+                      </div>
+                      <div>
+                        <label>Memahami materi tauhid</label><br>
+                        <select>
+                          <option selected disabled>-- Pilih --</option>
+                          <option>Allah</option>
+                          <option>AR-Rosul</option>
+                          <option>AD-Diin</option>
+                          <option>AL-Ibadah</option>
+                          <option>AL-Akhlaq</option>
+                          <option>Harta dalam Islam</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label>Nilai</label><br>
+                        <input type="number" min="0" max="100" placeholder="0">
+                      </div>
+                      <div class="form-group">
+                        <div>
+                          <label>Mengetahui bacaan dan praktek tayamum</label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Mengetahui dasar hukum, syarat dan rukun tentang tayamum</option>
+                            <option>Menjelaskan cara tayamum</option>
+                            <option>Menguraikan manfaat serta hikmah tayamum</option>
+                            <option>Mampu mempraktekkan bacaan dan gerakan tayamum sesuai dengan ketentuan</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                      
+                        <div>
+                          <label>Belajar menterjemahkan Al-Qur’an</label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Membiasakan diri Tadarus (ODOZ) sekaligus membaca terjemah ayat</option>
+                            <option>Minimal Hafal 1 Juz (juz 27) dengan Tahsin, Tajwid, Makhraj beserta artinya</option>
+                            <option>Mampu Menjadi Tutor Sebaya</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                      
+                        <div>
+                          <label>Mampu membaca Al-Qur'an dengan benar</label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Mengetahui ilmu tajwid</option>
+                            <option>Mampu melafalkan huruf-huruf hijaiyyah sesuai dengan kaidah ilmu tajwid</option>
+                            <option>Mampu membaca Al-Qur’an sesuai dengan ilmu tajwid</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                      
+                        <div>
+                          <label>Mengetahui Ilmu tentang Haid</label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Mengetahui Ilmu tentang Haid</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                      </div>
+                    </div> 
+                    </form>                  
+              
+                  <h3 style="color:red;">Karakter</h3>
+                  <form>                       
+                    <div class="form-group">
+                      <div>
+                          <label>Bisa mengelola keuangan sendiri, 
+                          </label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Memiliki tabungan
+                            </option>
+                            <option>Bisa menyisihkan haratanya untuk berinfak
+                            </option>
+                            <option>Bisa menentukan prioritas keuangan
+                            </option>
+                          </select>
+                      </div>
+                      <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                      </div>
+                      <div>
+                        <label>Sadar akan pentingnya hidup sehat, 
+                        </label><br>
+                        <select>
+                          <option selected disabled>-- Pilih --</option>
+                          <option>Tidak jajan atau makan makanan yang tidak sehat
+                          </option>
+                          <option>Makan teratur
+                          </option>
+                          <option>Tidur teratur
+                          </option>
+                          <option>Menerapkan hidup bersih dan sehat
+                          </option>
+                        </select>
+                      </div>
+                      <div>
+                        <label>Nilai</label><br>
+                        <input type="number" min="0" max="100" placeholder="0">
+                      </div>
+                      <div>
+                        <label>Berolahraga rutin, 
+                        </label><br>
+                        <select>
+                          <option selected disabled>-- Pilih --</option>
+                          <option>Mampu menjaga kesehatan diri dengan menjaga pola makan yang baik dan bergiji
+                          </option>
+                          <option>Melakukan olahraga minimal sekali dalam seminggu
+                          </option>
+                          <option>Melakukan work out setiap hari.
+                          </option>
+                        </select>
+                      </div>
+                      <div>
+                        <label>Nilai</label><br>
+                        <input type="number" min="0" max="100" placeholder="0">
+                      </div>
+                      <div>
+                        <label>Tidak mudah menyerah, 
+                        </label><br>
+                        <select>
+                          <option selected disabled>-- Pilih --</option>
+                          <option>Memiliki tujuan hidup yang jelas
+                          </option>
+                        </select>
+                      </div>
+                      <div>
+                        <label>Nilai</label><br>
+                        <input type="number" min="0" max="100" placeholder="0">
+                      </div>
+                      <div>
+                        <label>Tidak mudah mengeluh
+                        </label><br>
+                        <select>
+                          <option selected disabled>-- Pilih --</option>
+                          <option>Rajin dan tekun dalam megerjakan tugas sekolah
+                          </option>
+                          <option>bersemangat, tegar menghadapi masalah, 
+                          </option>
+                          <option>mudah tersenyum dan selalu ceria
+                          </option>
+                          <option>aktif dalam setiap pembelajaran
+                          </option>
+                        </select>
+                      </div>
+                      <div>
+                        <label>Nilai</label><br>
+                        <input type="number" min="0" max="100" placeholder="0">
+                      </div>              
+                      </div>
+                  </form>
+              
+                  <h3 style="color:red;">Skill</h3>
+                  <form>                       
+                      <div class="form-group">
+                      <div>
+                          <label>Mampu bertayamum, 
+                          </label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Mengetahui dasar hukum, syarat dan rukun tentang tayamum
+                            </option>
+                            <option>Menjelaskan cara tayamum
+                            </option>
+                            <option>Menguraikan manfaat serta hikmah tayamum
+                            </option>
+                            <option>Mampu mempraktekkan bacaan dan gerakan tayamum sesuai dengan ketentuan
+                            </option>
+                          </select>
+                      </div>
+                      <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                      </div>
+                      <div>
+                        <label>Mampu ber istinja, 
+                        </label><br>
+                        <select>
+                          <option selected disabled>-- Pilih --</option>
+                          <option>Mengetahui dasar hukum, syarat dan rukun tentang istinja
+                          </option>
+                          <option>Menjelaskan cara Istinja
+                          </option>
+                          <option>Mampu mempraktekkan bacaan dan tata cara istinja sesuai dengan ketentuan
+                          </option>
+                        </select>
+                      </div>
+                      <div>
+                        <label>Nilai</label><br>
+                        <input type="number" min="0" max="100" placeholder="0">
+                      </div>
+                      <div>
+                        <label>Bisa mengendarai motor, (untuk perempuan = bisa cuci pakaian, piring, dll)
+                        </label><br>
+                        <select>
+                          <option selected disabled>-- Pilih --</option>
+                          <option>Menghidupkan mesin
+                          </option>
+                          <option>Mengetahui perangkat dan fungsi-fungsi pada motor
+                          </option>
+                          <option>Bisa mengendarai motor matic maupun manual
+                          </option>
+                        </select>
+                      </div>
+                      <div>
+                        <label>Nilai</label><br>
+                        <input type="number" min="0" max="100" placeholder="0">
+                      </div>
+                      <div>
+                        <label>Memiliki kemampuan beladiri seperti karate,dll, (untuk perempuan = Memiliki kemampuan beladiri praktis)
+                        </label><br>
+                        <select>
+                          <option selected disabled>-- Pilih --</option>
+                          <option>Munculnya sikap cinta damai dan sosial tinggi
+                          </option>
+                          <option>Membentuk sikap Sportif, jujur, disiplin
+                          </option>
+                          <option>Terampil menjaga keselamatan diri dan orang lain
+                          </option>
+                          <option>Membentuk pola hidup sehat
+                          </option>
+                        </select>
+                      </div>
+                      <div>
+                        <label>Nilai</label><br>
+                        <input type="number" min="0" max="100" placeholder="0">
+                      </div>
+                      </div>            
+                      </form>
+                    </div>
+                    
+                    <div id="kelas9" class="form-section">
+                      <h2 style="color:blue;">Kelas 9</h2>
+                      <h3 style="color:red;">Pengetahuan Diniyah</h3>
+                      <form>                       
+                        <div class="form-group">
+                        <div>
+                          <label>Murojaah zuz 27-28
+                          </label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>51 (Az Zariyat) 31-60
+                            </option>
+                            <option>52 (At Tuur)
+                            </option>
+                            <option>53 (An Najm)
+                            </option>
+                            <option>54 (Al Qamar)
+                            </option>
+                            <option>55 (Ar Rahman)
+                            </option>
+                            <option>56 (Al Waqi'ah)
+                            </option>
+                            <option>57 (Al Hadid)
+                            </option>
+                            <option>58 (Al Mujaadilah)
+                            </option>
+                            <option>59 (Al Hasyr)
+                            </option>
+                            <option>60 (Al Mumtahanah)
+                            </option>
+                            <option>61 (Ash Shaff)
+                            </option>
+                            <option>62 (Al Jumu'ah)
+                            </option>
+                            <option>63 (Al Munaafiquun)
+                            </option>
+                            <option>64 (At Taghaabun)
+                            </option>
+                            <option>65 (Ath Thalaaq)
+                            </option>
+                            <option>66 (At Tahrim)
+                            </option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                        <div>
+                          <label>Hapal ayat ayat pilihan dalam Alquran (24 ayat)
+                          </label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>17:36, 22:54, 58:11, 35:28
+                            </option>
+                            <option>23:115, 75:36, 7:179, 11:61, 
+                            </option>
+                            <option>17:41, 29:49, 2:185, 5:68
+                            </option>
+                            <option>17:15, 2:213, 62:2, 7:157
+                            </option>
+                            <option>Tentang Allah
+                            </option>
+                            <option>Tentang Islam
+                            </option>
+                            <option>9:24, 4:59, 9:41, 9:111
+                            </option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                        <div>
+                          <label>Hapal minimal 5 hadist ( Arbain 21-25 )
+                          </label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Tentang istiqomah dalam Islam,
+                            </option>
+                            <option>Tentang amal sholeh akan mengantarkan ke syurga, 
+                            </option>
+                            <option>Tentang fadilah dzikir,
+                            </option>
+                            <option>Tentang hanya kepada Allah tempat utk meminta,
+                            </option>
+                            <option>Tentang amalan yg setara dg amalan orang kaya.
+                            </option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                        <div>
+                          <label>Hapal doa doa dalam Alquran (5 doa)
+                          </label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Al Mumtahanah 4-5
+                            </option>
+                            <option>Ali Imron 191
+                            </option>
+                            <option>An Nisa 75
+                            </option>
+                            <option>Al Maidah 114
+                            </option>
+                            <option>Al Mu'minun 29
+                            </option>
+                            <option>As Suro 83-85
+                            </option>
+                            <option>At Tahrim 11
+                            </option>
+                            <option>Nuh 28
+                            </option>
+                            <option>Al Anbiya 87
+                            </option>
+                            <option>At Tahrim 8
+                            </option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                        <div>
+                          <label>Mengetahui ilmu tajwid dan makhorijul huruf hijaiyah
+                          </label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Mampu melafalkan huruf-huruf hijaiyyah sesuai dengan kaidah makhorijul huruf
+                            </option>
+                            <option>Mampu melafalkan huruf-huruf hijaiyyah sesuai dengan kaidah ilmu tajwid
+                            </option>
+                            <option>Mampu membaca alquran sesuai dengan ilmu tajwid dan makhorijul huruf
+                            </option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                        <div>
+                          <label>Mengetahui ushul fiqih dasar, 
+                          </label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Mengetahui definisi fiqih siasah
+                            </option>
+                            <option>Mengetahui ruang lingkup fiqih siasah
+                            </option>
+                            <option>Mengetahui tujuan dan kegunaan fiqih siasah
+                            </option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                        <div>
+                          <label>Mengetahui fiqih sholat (jama' qoshor) & sholat sunnat
+                          </label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Mengetahui dasar hukum, syarat dan rukun tentang shalat sunah
+                            </option>
+                            <option>Menjelaskan cara solat sunnat dan jama' qoshor
+                            </option>
+                            <option>Menguraikan manfaat serta hikmah dari sholat sunnat
+                            </option>
+                            <option>Mampu mempraktekkan bacaan dan gerakan solat sunnat sesuai dengan ketentuan
+                            </option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                        <div>
+                          <label>Mengenal fiqh nisaa (jilbab, Haid, Nifash, wiladah, suci dll ),
+                          </label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Mengenal fiqh nisaa (jilbab, Haid, Nifash, wiladah, suci dll ),
+                            </option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                        </div>                        
+                      </div> 
+                      </form>                  
+                
+                    <h3 style="color:red;">Karakter</h3>
+                    <form>                       
+                      <div class="form-group">
+                        <div>
+                            <label>Mandiri dalam berfikir, 
+                            </label><br>
+                            <select>
+                              <option selected disabled>-- Pilih --</option>
+                              <option>Mampu menyelesaikan masalah dalam kehidupan sehari-hari</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Nilai</label><br>
+                            <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                        <div>
+                          <label>Mampu merencanakan masa depan & target hidup, 
+                          </label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Mengetahui Hobby dan bakat
+                            </option>
+                            <option>mengetahui kelebihan dan kekurngan diri
+                            </option>
+                            <option>menentukan target hidup dan cita-cita
+                            </option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                        <div>
+                          <label>Mengetahui potensi diri, 
+                          </label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>mengetahui TOWS ( Threat/tantangan, Opportunities/kesempatan, weakness/kelemahan, strengh/kekuatan,) diri sendiri
+                            </option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                        <div>
+                          <label>Menyadari penting nya belajar qur'an dan mengajarkannya, 
+                          </label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Mengetahui keistimewaan al-Qur'an
+                            </option>
+                            <option>Mengetahui pahala membaca al-Qur'an 
+                            </option>
+                            <option>Mengetahui I'jaz (mu'jizat al-Qur'an)
+                            </option>
+                            <option>Mengetahui kisah-kisah dalam al-Qur'an
+                            </option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                        <div>
+                          <label>Mulai membiasakan sholat tahajud dan dhuha, 
+                          </label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Mengetahui dasar hukum dan tata cara pelaksanaan shalat dhuha
+                            </option>
+                            <option>Mengetahui dasar hukum dan tata cara pelaksanaan shalat tahajud
+                            </option>
+                            <option>Mengetahui hikmah dari shalat dhuha dan tahajud
+                            </option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                        <div>
+                          <label>Mulai membiasakan shaum sunnah
+                          </label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Mengetahui dan memahami hukum, pahala serta hikmah shoum sunnah 
+                            </option>
+                            <option>Mendawamkan shaum sunnah (senin kamis atau daud)
+                            </option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                        </div>              
+                        </div>
+                    </form>
+                
+                    <h3 style="color:red;">Skill</h3>
+                    <form>                       
+                        <div class="form-group">
+                        <div>
+                            <label>Bisa komputer dasar (Word, excel, Power point), 
+                            </label><br>
+                            <select>
+                              <option selected disabled>-- Pilih --</option>
+                              <option>Mengetahui cara menggunakan microsof office dan corel deraw
+                              </option>
+                              <option>Menguraikan manfaat dalam menggunakan microsof office dan corel draw
+                              </option>
+                              <option>Mampu mengopeerasikan microsof office dan corel draw 
+                              </option>
+                              <option>Siswa mampu merasakan manfaat ketika sudah bisa  mengoperasikan microsof office dan corel deraw
+                              </option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Nilai</label><br>
+                            <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                        <div>
+                          <label>Bisa internet dasar (email, chatting), 
+                          </label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Mengetahui cara menggunakan internet
+                            </option>
+                            <option>Menjelaskan cara menggunakan internet
+                            </option>
+                            <option>Menguraikan manfaat dalam menggunakan internet
+                            </option>
+                            <option>Mampu mengopeerasikan internet (browsing, chating, email) 
+                            </option>
+                            <option>Siswa mampu merasakan manfaat ketika sudah bisa  mengoperasikan internet
+                            </option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                        <div>
+                          <label>Bisa berenang
+                          </label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Bisa berenang
+                            </option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                        </div>            
+                        </form>
+                      </div>
+                      
+                      <div id="kelas10" class="form-section">
+                        <h2 style="color:blue;">Kelas 10</h2>
+                        <h3 style="color:red;">Pengetahuan Diniyah</h3>
+                        <form>                       
+                          <div class="form-group">
+                          <div>
+                            <label>Hapal Al-Qur'an minimal 1 juz ( Juz 1 )
+                            </label><br>
+                            <select>
+                              <option selected disabled>-- Pilih --</option>
+                              <option>Surat Al Fatihah ayat 1 s/d Al Baqoroh ayat 30
+                              </option>
+                              <option>Surat Al Baqoroh ayat 31 s/d ayat 67
+                              </option>
+                              <option>Surat Al Baqoroh ayat 68 s/d ayat 104
+                              </option>
+                              <option>Surat Al Baqoroh ayat 105 s/d ayat 141
+                              </option>
+                            </select>
+                          </div>
+                          <div>
+                            <label>Nilai</label><br>
+                            <input type="number" min="0" max="100" placeholder="0">
+                          </div>
+                          <div>
+                            <label>Memahami hukum ZIS
+                            </label><br>
+                            <select>
+                              <option selected disabled>-- Pilih --</option>
+                              <option>Mengetahui dasar hukum tentang zakat, infaq, dan sodaqah
+                              </option>
+                              <option>Mengetahui tentang makna zakat, infaq, dan sodaqah
+                              </option>
+                              <option>Mengetahui macam-macam zakat
+                              </option>
+                              <option>Mengetahui syarat-syarat wajib zakat 
+                              </option>
+                              <option>Mengetahui nishab dan kadar zakat 
+                              </option>
+                              <option>Mengetahui hikmah zakat
+                              </option>
+                            </select>
+                          </div>
+                          <div>
+                            <label>Nilai</label><br>
+                            <input type="number" min="0" max="100" placeholder="0">
+                          </div>
+                          <div>
+                            <label>Mengenal fiqh jinayat
+                            </label><br>
+                            <select>
+                              <option selected disabled>-- Pilih --</option>
+                              <option>Mengetahui definisi jinayah
+                              </option>
+                              <option>Mengetahui dasar hukum larangan membunuh
+                              </option>
+                              <option>Mengetahui macam-macam pembunuhan
+                              </option>
+                              <option>Mengetahui hukuman bagi pembunuh
+                              </option>
+                              <option>Mengetahui dasar hukum bagi pembunuh
+                              </option>
+                              <option>Mengetahui hikmah dilarangnya membunuh
+                              </option>
+                              <option>Mengetahui definisi jarimah
+                              </option>
+                              <option>Mengetahui unsur-unsur jarimah
+                              </option>
+                              <option>Mengetahui berbagai jenis jarimah
+                              </option>
+                              <option>Mengetahui pengertian dan macam-macam hudud
+                              </option>
+                              <option>Mengetahui pengertian qisos
+                              </option>
+                              <option>Mengetahui syarat-syarat qisos
+                              </option>
+                              <option>Mengetahui hikmah hukum qisos
+                              </option>
+                              <option>Mengetahui pengertian hukum diyat
+                              </option>
+                              <option>Mengetahui pengertian dan macam-macam ta'zir
+                              </option>
+                            </select>
+                          </div>
+                          <div>
+                            <label>Nilai</label><br>
+                            <input type="number" min="0" max="100" placeholder="0">
+                          </div>
+                          <div>
+                            <label>Mengenal 'manajemen dalam Islam'
+                            </label><br>
+                            <select>
+                              <option selected disabled>-- Pilih --</option>
+                              <option>Mengenal 'manajemen dalam Islam'
+                              </option>
+                            </select>
+                          </div>
+                          <div>
+                            <label>Nilai</label><br>
+                            <input type="number" min="0" max="100" placeholder="0">
+                          </div>
+                          <div>
+                            <label>Mengetahui ilmu pengurusan jenajah
+                            </label><br>
+                            <select>
+                              <option selected disabled>-- Pilih --</option>
+                              <option>Mengetahui hukum-hukum memandikan jenazah
+                              </option>
+                              <option>Mengetahui tata cara memandikan jenazah
+                              </option>
+                              <option>Mengetahui tata cara mengakafani jenazah
+                              </option>
+                              <option>Mengetahui cara shalat jenazah
+                              </option>
+                              <option>Mengetahui rukun shalat jenazah
+                              </option>
+                              <option>Mengetahui sunnah-sunnah dalam shalat jenazah
+                              </option>
+                              <option>Mengetahui cara mengantarkan dan menguburkan jenazah
+                              </option>
+                              <option>Mengetahui makna takziah
+                              </option>
+                              <option>Mengetahui hal yang diharamkan berkenaan dengan jenazah
+                              </option>
+                              <option>Mengetahui hukum-hukum yang berkaitan dengan jenazah
+                              </option>
+                            </select>
+                          </div>
+                          <div>
+                            <label>Nilai</label><br>
+                            <input type="number" min="0" max="100" placeholder="0">
+                          </div>
+                          <div>
+                            <label>Memahami hikmah sirah rasul 
+                            </label><br>
+                            <select>
+                              <option selected disabled>-- Pilih --</option>
+                              <option>Menjelaskan keadaan bangsa Arab pra-Islam
+                              </option>
+                              <option>Menjelaskan kehidupan Muhammad sebelum diangkat menjadi rasul
+                              </option>
+                              <option>Menjelaskan kepribadian Muhammad
+                              </option>
+                              <option>Menjelaskan perjalanan dakwah Rasulullah, tantangan yang dihadapinya, serta upaya yang dilakukannya
+                              </option>
+                              <option>Menjelaskan sistem sosial dan budaya Islam pada masa masa Rasulullah.
+                              </option>
+                              <option>Menjelaskan tatanan sosial-politik umat Islam di Yastrib
+                              </option>
+                              <option>Menjelaskan peristiwa Fatkhul Makkah
+                              </option>
+                              <option>Menjelaskan masa sakit dan wafatnya Muhammad
+                              </option>
+                            </select>
+                          </div>
+                          <div>
+                            <label>Nilai</label><br>
+                            <input type="number" min="0" max="100" placeholder="0">
+                          </div>
+                          <div>
+                            <label>Mengetahui kisah minimal 10 shahabat Rasul ( 1-10 )
+                            </label><br>
+                            <select>
+                              <option selected disabled>-- Pilih --</option>
+                              <option>Mengetahui kisah Abu Bakar As Siddiq
+                              </option>
+                              <option>Mengetahui Kisah Umar Bin Khatab
+                              </option>
+                              <option>Mengetahui kisah Ustman Bin Affan
+                              </option>
+                              <option>Mengetahui Kisah Ali Bin Abi Thalib
+                              </option>
+                              <option>Mengetahui Thalhah Bin Ubaidillah
+                              </option>
+                              <option>Mengetahui Az-Zubair Bin Al-'Awwam
+                              </option>
+                              <option>Mengetahui Abdurrahman Bin 'Auf
+                              </option>
+                              <option>Mengetahui Sa'Ad Bin Abi Waqqash
+                              </option>
+                              <option>Mengetahui Sa'Id Bin Zaid Bin Amru Bin Nufail
+                              </option>
+                              <option>Mengetahui Abu Ubaidah Bin Al-Jarrah
+                              </option>
+                            </select>
+                          </div>
+                          <div>
+                            <label>Nilai</label><br>
+                            <input type="number" min="0" max="100" placeholder="0">
+                          </div>
+                          <div>
+                            <label>Mengetahui fiqih sholat (sholat khauf, siddatul hauf, dalam kendaraan)
+                            </label><br>
+                            <select>
+                              <option selected disabled>-- Pilih --</option>
+                              <option>Mengetahui fiqih sholat (sholat khauf, siddatul hauf, dalam kendaraan)
+                              </option>
+                            </select>
+                          </div>
+                          <div>
+                            <label>Nilai</label><br>
+                            <input type="number" min="0" max="100" placeholder="0">
+                          </div>
+                          <div>
+                            <label>Mengenal fiqih (ushul Fiqih), 
+                            </label><br>
+                            <select>
+                              <option selected disabled>-- Pilih --</option>
+                              <option>Mengetahui Makna Ushul Fiqih
+                              </option>
+                              <option>Mengetahui Sumber Ushul Fiqih
+                              </option>
+                              <option>Pertahanan Umat (Hanum)
+                              </option>
+                              <option>Mampu Menjaga Amanah
+                              </option>
+                            </select>
+                          </div>
+                          <div>
+                            <label>Nilai</label><br>
+                            <input type="number" min="0" max="100" placeholder="0">
+                          </div>
+                          <div>
+                            <label>Memahami materi 'Leader Ship'
+                            </label><br>
+                            <select>
+                              <option selected disabled>-- Pilih --</option>
+                              <option>Mengetahui Arti Kepemimpinan
+                              </option>
+                              <option>Tujuan Kepemimpinan dl organisasi
+                              </option>
+                              <option>Fungsi Kepemimpinan
+                              </option>
+                            </select>
+                          </div>
+                          <div>
+                            <label>Nilai</label><br>
+                            <input type="number" min="0" max="100" placeholder="0">
+                          </div>
+                          <div>
+                            <label>Hapal minimal 6 hadist ( Arbain 26-31 )
+                            </label><br>
+                            <select>
+                              <option selected disabled>-- Pilih --</option>
+                              <option>Tentang Macam - Macam Sedekah,
+                              </option>
+                              <option>Tentang Kebaikan Dan Dosa,
+                              </option>
+                              <option>Tentang Taat Pd Pemimpin, 
+                              </option>
+                              <option>Tentang Amalan Utk Masuk Syurga
+                              </option>
+                              <option> Tentang Batasan Aturan Allah,
+                              </option>
+                              <option>Tentang Zuhud,  Iman, Ihsan,  
+                              </option>
+                            </select>
+                          </div>
+                          <div>
+                            <label>Nilai</label><br>
+                            <input type="number" min="0" max="100" placeholder="0">
+                          </div>
+                        </div> 
+                        </form>                  
+                  
+                      <h3 style="color:red;">Karakter</h3>
+                      <form>                       
+                        <div class="form-group">
+                          <div>
+                              <label>Terbiasa melaksanakan ZIS, 
+                              </label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                                <option>Membayar Infaq setiap bulan
+                                </option>
+                                <option>Menunaikan Zakat
+                                </option>
+                                <option>Terbiasa Shodakoh
+                                </option>
+                              </select>
+                          </div>
+                          <div>
+                              <label>Nilai</label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                          </div>
+                          <div>
+                            <label>Terbiasa sholat tahajud, 
+                            </label><br>
+                            <select>
+                              <option selected disabled>-- Pilih --</option>
+                              <option>Terbiasa tidur awal
+                              </option>
+                              <option>Memelihara adab tidur
+                              </option>
+                              <option>Melaksanakan sholat tahajud setiap malam
+                              </option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Nilai</label><br>
+                            <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                        <div>
+                          <label>Terbiasa sholat dhuha, 
+                          </label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Terbiasa melaksanakan sholat dhuha di waktu pagi
+                            </option>
+                          </select>
+                      </div>
+                      <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                      </div>
+                      <div>
+                        <label>Terbiasa shaum sunnah, 
+                        </label><br>
+                        <select>
+                          <option selected disabled>-- Pilih --</option>
+                          <option>Terbiasa melaksanakan shaum sunnah senin kamis
+                          </option>
+                          <option>Terbiasa melaksanakan shaum sunnah arafah
+                          </option>
+                          <option>Terbiasa melaksanakan shaum sunnah syawal
+                          </option>
+                          <option>Terbiasa melaksanakan shaum sunnah daud
+                          </option>
+                          <option>Terbiasa melaksanakan shaum sunnah di bulan-bulan haram
+                          </option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Nilai</label><br>
+                        <input type="number" min="0" max="100" placeholder="0">
+                    </div>              
+                          </div>
+                      </form>
+                  
+                      <h3 style="color:red;">Skill</h3>
+                      <form>                       
+                          <div class="form-group">
+                          <div>
+                              <label>Mampu khotbah jum'at, 
+                              </label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                                <option>Mampu menjadi khotib jum'at
+                                </option>
+                                <option>Memahami Syarat wajib sholat jum'at
+                                </option>
+                                <option>Memahami Syarat syah sholat jum'at
+                                </option>
+                                <option>Memahami amalan sunah sholat jum'at
+                                </option>
+                                <option>Memahami ketentuan khutbah sholat jum'at
+                                </option>
+                              </select>
+                          </div>
+                          <div>
+                              <label>Nilai</label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                          </div>
+                          <div>
+                            <label>Mampu mengimam sholat jum'at, 
+                            </label><br>
+                            <select>
+                              <option selected disabled>-- Pilih --</option>
+                              <option>Mampu menjadi imam sholat jum'at
+                              </option>
+                              <option>Mampu mengerjakan rukun wajib sholat
+                              </option>
+                              <option>Mengetahui cukup fiqh dan qur'an sholat yang syah
+                              </option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Nilai</label><br>
+                            <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                        <div>
+                          <label>Mulai belajar khotbah 'idain, 
+                          </label><br>
+                          <select>
+                            <option selected disabled>-- Pilih --</option>
+                            <option>Mampu melakukan praktek menjadi imam sholat ied
+                            </option>
+                            <option>Menguasai materi khotbah
+                            </option>
+                          </select>
+                      </div>
+                      <div>
+                          <label>Nilai</label><br>
+                          <input type="number" min="0" max="100" placeholder="0">
+                      </div>
+                          </div>            
+                          </form>
+                        </div>
+                        
+                        <div id="kelas11" class="form-section">
+                          <h2 style="color:blue;">Kelas 11</h2>
+                          <h3 style="color:red;">Pengetahuan Diniyah</h3>
+                          <form>                       
+                            <div class="form-group">
+                            <div>
+                              <label>Hapal Al-Qur’an minimal 1 zuz ( Juz 2 )
+                              </label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                                <option>Surat Al Baqoroh ayat 142 s/d ayat 169
+                                </option>
+                                <option>Surat Al Baqoroh ayat 170 s/d ayat 196
+                                </option>
+                                <option>Surat Al Baqoroh ayat 197 s/d ayat 223
+                                </option>
+                                <option>Surat Al Baqoroh ayat 224 s/d ayat 252
+                                </option>
+                              </select>
+                            </div>
+                            <div>
+                              <label>Nilai</label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                            </div>
+                            <div>
+                              <label>Memahami Hukum Haji dan Umrah
+                              </label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                                <option>Mengetahui pengertian Haji dan Umroh
+                                </option>
+                                <option>Mengetahui dasar hukum tentang Haji dan Umroh
+                                </option>
+                                <option>Menjelaskan rukun serta syarat haji dan umrah
+                                </option>
+                                <option>Menjelaskan kewajiban serta sunnah haji dan umrah
+                                </option>
+                                <option>Menjelaskan cara pelaksanaan haji dan umrah
+                                </option>
+                                <option>Menguraikan manfaat serta hikmah haji dan umrah
+                                </option>
+                              </select>
+                            </div>
+                            <div>
+                              <label>Nilai</label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                            </div>
+                            <div>
+                              <label>Mengetahui kisah minimal 10 shahabat (11-20)
+                              </label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                                <option>Mengetahui Khadijah Binti Khuwailid
+                                </option>
+                                <option>Mengetahui Fatimah Binti Rasulullah
+                                </option>
+                                <option>Mengetahui Al-Hasan Bin Ali Bin Abi Thalib
+                                </option>
+                                <option>Mengetahui Al-Husain Bin Ali Bin Abi Thalib
+                                </option>
+                                <option>Mengetahui Hafshah Binti Umar
+                                </option>
+                                <option>Mengetahui Bilal Bin Rabbah
+                                </option>
+                                <option>Mengetahui Ja'Far Bin Abi Thalib
+                                </option>
+                                <option>Mengetahui Ukkasyah Bin Mihshan
+                                </option>
+                                <option>Mengetahui Sa'Adz Bin Mu'Adz
+                                </option>
+                                <option>Mengetahui Ar-Rumaisha
+                                </option>
+                              </select>
+                            </div>
+                            <div>
+                              <label>Nilai</label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                            </div>
+                            <div>
+                              <label>Hapal minimal 6 hadits (Arbain 32-37)
+                              </label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                                <option>Tentang Larangan Melakukan Amalan Yg Madharat,
+                                </option>
+                                <option>Tentang Setiap Pengaduan Perlu Bukti
+                                </option>
+                                <option>Tentang Merubah Kemungkaran,  
+                                </option>
+                                <option>Tentang Larangan Untuk Saling Dengki
+                                </option>
+                                <option>Tentang Saling Membantu Sesama Muslim
+                                </option>
+                                <option>Tentang Kasih Sayang Allah Swt. Tentang Orang Beriman
+                                </option>
+                              </select>
+                            </div>
+                            <div>
+                              <label>Nilai</label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                            </div>
+                          </div>
+
+                            <div class="form-group">
+                            <div>
+                              <label>Mengetahui hukum muamalah (jual beli, pinjam meminjam, dll)</label><br>
+                              <label style="color:green;">Jual Beli</label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                                <option>Mengetahui pengertian dan dasar hukum jual beli
+                                </option>
+                                <option>Mengetahui syarat dan rukun jual beli
+                                </option>
+                                <option>Mengetahui khiyar dan bentuk-bentuk jual beli
+                                </option>
+                              </select>
+                            </div>
+                            <div>
+                              <label></label><br>
+                              <label>Nilai</label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                            </div>
+                            <div>
+                              <label></label><br>
+                              <label style="color:green;">Riba</label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                                <option>Mengetahui pengertian dan dasar hukum riba</option>
+                                <option>Mengetahui macam-macam riba dan bunga bank</option>
+                              </select>
+                            </div>
+                            <div>
+                              <label></label><br>
+                              <label>Nilai</label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                            </div>
+                            <div>
+                              <label></label><br>
+                              <label style="color:green;">Jual Beli</label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                                <option>Mengetahui pengertian dan dasar hukum jual beli
+                                </option>
+                                <option>Mengetahui syarat dan rukun jual beli
+                                </option>
+                                <option>Mengetahui khiyar dan bentuk-bentuk jual beli
+                                </option>
+                              </select>
+                            </div>
+                            <div>
+                              <label>Nilai</label><br>
+                              <label></label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                            </div>
+                            <div>
+                              <label></label><br>
+                              <label style="color:green;">Qirad dan Hiwalah
+                              </label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                                <option>Mengetahui pegertian dan dasar hukum Qirad dan Hiwalah
+                                </option>
+                                <option>Mengetahui syarat dan pelaksanaan Qirad dan Hiwalah
+                                </option>
+                              </select>
+                            </div>
+                            <div>
+                              <label>Nilai</label><br>
+                              <label></label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                            </div>
+                            <div>
+                              <label></label><br>
+                              <label style="color:green;">Syirkah dan Mudharabah
+                              </label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                                <option>Mengetahui pengertian, dasar hukum, syarat dan rukun syirkah dan mudharabah
+                                </option>
+                                <option>Mengetahui macam-macam syirkah dan mudharabah
+                                </option>
+                              </select>
+                            </div>
+                            <div>
+                              <label>Nilai</label><br>
+                              <label></label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                            </div>
+                            <div>
+                              <label></label><br>
+                              <label style="color:green;">Muzara'ah, Mukhabarah dan Musaqah
+                              </label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                                <option>Mengetahui Pengertian, dasar hukum syarat dan rukun Muzara'ah, Mukhabarah dan Musaqah
+                                </option>
+                                <option>Mengetahui cara pelaksanaan Muzara'ah, Mukhabarah dan Musaqah
+                                </option>
+                                <option>Mengetahui cara pelaksanaan Muzara'ah, Mukhabarah dan Musaqah
+                                </option>
+                              </select>
+                            </div>
+                            <div>
+                              <label>Nilai</label><br>
+                              <label></label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                            </div>
+                            <div>
+                              <label></label><br>
+                              <label style="color:green;">Ijarah dan Ariyah</label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                                <option>Pengertian, dasar hukum syarat dan rukun ijarah dan ariyah</option>
+                                <option>Mengetahui macam-macam Ijarah dan Ariyah</option>
+                              </select>
+                            </div>
+                            <div>
+                              <label>Nilai</label><br>
+                              <label></label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                            </div>
+                            <div>
+                              <label></label><br>
+                              <label style="color:green;">Ar-Rahn
+                              </label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                                <option>Pengertian dasar hukum syarat dan rukun ar rahn</option>
+                                <option>Mengetahui pemanfaatan ar rahn</option>
+                              </select>
+                            </div>
+                            <div>
+                              <label>Nilai</label><br>
+                              <label></label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                            </div>
+                            <div>
+                              <label></label><br>
+                              <label style="color:green;">Wadi'ah dan Luqthah</label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                                <option>Pengertian, dasar hukum, syarat dan rukun wadi'ah dan luqathah</option>
+                                <option>Mengetahui macam-macam luqathah</option>
+                              </select>
+                            </div>
+                            <div>
+                              <label>Nilai</label><br>
+                              <label></label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                            </div>
+                            </div>
+
+                            <div class="form-group">
+                            <div>
+                              <label>Memahami 13 karakter Nabi
+                              </label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                                <option>Aman
+                                </option>
+                                <option>Sehat
+                                </option>
+                                <option>Sejahtra
+                                </option>
+                                <option>Akhlak
+                                </option>
+                                <option>Disiplin
+                                </option>
+                                <option>Ikhlas
+                                </option>
+                                <option>Sabar
+                                </option>
+                                <option>Taawwun
+                                </option>
+                                <option>Terampil
+                                </option>
+                                <option>Aktif
+                                </option>
+                                <option>Produktif
+                                </option>
+                                <option>Efektif
+                                </option>
+                                <option>Efisien
+                                </option>
+                              </select>
+                            </div>
+                            <div>
+                              <label>Nilai</label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                            </div>
+                          </div> 
+                          </form>                  
+                    
+                        <h3 style="color:red;">Karakter</h3>
+                        <form>                       
+                          <div class="form-group">
+                            <div>
+                                <label>Mulai melakukan 13 karakter Nabi
+                                </label><br>
+                                <select>
+                                  <option selected disabled>-- Pilih --</option>
+                                <option>Aman
+                                </option>
+                                <option>Sehat
+                                </option>
+                                <option>Sejahtra
+                                </option>
+                                <option>Akhlak
+                                </option>
+                                <option>Disiplin
+                                </option>
+                                <option>Ikhlas
+                                </option>
+                                <option>Sabar
+                                </option>
+                                <option>Taawwun
+                                </option>
+                                <option>Terampil
+                                </option>
+                                <option>Aktif
+                                </option>
+                                <option>Produktif
+                                </option>
+                                <option>Efektif
+                                </option>
+                                <option>Efisien
+                                </option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>Nilai</label><br>
+                                <input type="number" min="0" max="100" placeholder="0">
+                            </div> 
+                            <div>
+                              <label>Mampu mengelola keuangan pribadi, 
+                              </label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                              <option>Lakukan Investasi yang cerdas
+                              </option>
+                              <option>Lacak dan atasi pengeluaran dengan tepat
+                              </option>
+                              <option>Susunan rencana jangka panjang
+                                </option>
+                              <option>Rencanakan dengan cerdas
+                              </option>
+                              </select>
+                          </div>
+                          <div>
+                              <label>Nilai</label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                          </div>              
+                            </div>
+                        </form>
+                    
+                        <h3 style="color:red;">Skill</h3>
+                        <form>                       
+                            <div class="form-group">
+                            <div>
+                                <label>Mampu berdakwah, 
+                                </label><br>
+                                <select>
+                                  <option selected disabled>-- Pilih --</option>
+                                  <option>Mampu berda'wah di kalangan masyarakat
+                                  </option>
+                                  <option>Menguasai materi berda'wah
+                                  </option>
+                                  <option>Kemampuan berimprofisasi
+                                  </option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>Nilai</label><br>
+                                <input type="number" min="0" max="100" placeholder="0">
+                            </div>
+                            <div>
+                              <label>Bisa praktek sholat gerhana, 
+                              </label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                                <option>Mampu melakukan sholat gerhana dengan benar
+                                </option>
+                                <option>Mampu melapalkan bacaan sholat gerhana dengan benar
+                                </option>
+                              </select>
+                          </div>
+                          <div>
+                              <label>Nilai</label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                          </div>
+                          <div>
+                            <label>Bisa mengendarai Motor/Mobil, 
+                            </label><br>
+                            <select>
+                              <option selected disabled>-- Pilih --</option>
+                              <option>Mampu mengendarai motor/mobil dengan mahir
+                              </option>
+                              <option>Memahami standar maintenance mobil
+                              </option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Nilai</label><br>
+                            <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                            </div>            
+                            </form>
+                          </div>
+                          
+                          <div id="kelas12" class="form-section">
+                            <h2 style="color:blue;">Kelas 12</h2>
+                            <h3 style="color:red;">Pengetahuan Diniyah</h3>
+                            <form>                       
+                              <div class="form-group">
+                              <div>
+                                <label>Murojaah zuz 1 - 2
+                                </label><br>
+                                <select>
+                                  <option selected disabled>-- Pilih --</option>
+                                  <option>Al Fatihah ayat 1 - Al Baqoroh ayat 58
+                                  </option>
+                                  <option>Al Baqoroh ayat 59 - 123
+                                  </option>
+                                  <option>Al Baqoroh ayat 124 - 188
+                                  </option>
+                                  <option>Al Baqoroh ayat 189 - 252
+                                  </option>
+                                </select>
+                              </div>
+                              <div>
+                                <label>Nilai</label><br>
+                                <input type="number" min="0" max="100" placeholder="0">
+                              </div>
+                              <div>
+                                <label>Memahami fiqh munakahat
+                                </label><br>
+                                <select>
+                                  <option selected disabled>-- Pilih --</option>
+                                  <option>Mengetahui pengertian pernikahan
+                                  </option>
+                                  <option>Mengetahui dasar hukum pernikahan
+                                  </option>
+                                  <option>Mengetahui syarat dan rukun nikah
+                                  </option>
+                                  <option>Mengetahui tujuan pernikahan
+                                  </option>
+                                  <option>Mengetahui Macam-macam pernikahan yang dilarang oleh Islam
+                                  </option>
+                                  <option>Mengetahui Hukum pernikahan
+                                  </option>
+                                </select>
+                              </div>
+                              <div>
+                                <label>Nilai</label><br>
+                                <input type="number" min="0" max="100" placeholder="0">
+                              </div>
+                              <div>
+                                <label>Mengetahui kisah minimal 10 shahabat ( 21-30 )</label><br>
+                                <select>
+                                  <option selected disabled>-- Pilih --</option>
+                                  <option>Mengetahui Amru Bin Tsabit (Al-Ushairim)</option>
+                                  <option>Mengetahui Keluarga Yasir</option>
+                                  <option>Mengetahui Haritsah Bin Suraqah</option>
+                                  <option>Mengetahui Abdullah Bin Salam</option>
+                                  <option>Mengetahui Umair Bin Hammam</option>
+                                  <option>Imran Bin Hushain Menyerupai Malaikat</option>
+                                  <option>Mengetahui Salamah Bin Al Akwa</option>
+                                  <option>Mengetahui Abdullah Bin Zubair</option>
+                                  <option>Mengetahui Abdullah Bin Abbas</option>
+                                  <option>Mengetahui  Abbad Bin Bisyir</option>
+                                </select>
+                              </div>
+                              <div>
+                                <label>Nilai</label><br>
+                                <input type="number" min="0" max="100" placeholder="0">
+                              </div>
+                              <div>
+                                <label>Hapal minimal 5 hadits ( Arbain 38-42)</label><br>
+                                <select>
+                                  <option selected disabled>-- Pilih --</option>
+                                  <option>Tentang Kedudukan Wali Allah Swt</option>
+                                  <option>Tentang Keringanan Kesulitan Dari Allah Swt</option>
+                                  <option>Tentang Hidup Seperti Pengembara</option>
+                                  <option>Tentang Ketundukkan Hawa Nafsu Terhadap Risalah</option>
+                                  <option>Tentang Allah Maha Pengampun</option>
+                                </select>
+                              </div>
+                              <div>
+                                <label>Nilai</label><br>
+                                <input type="number" min="0" max="100" placeholder="0">
+                              </div>
+                            </div> 
+                            </form>                  
+                      
+                          <h3 style="color:red;">Karakter</h3>
+                          <form>                       
+                            <div class="form-group">
+                              <div>
+                                  <label>Terbiasa hidup sehat</label><br>
+                                  <select>
+                                    <option selected disabled>-- Pilih --</option>
+                                    <option>Istirahat Cukup</option>
+                                    <option>Menciptakan lingkungan sehat</option>
+                                    <option>Menjaga pola makan</option>
+                                    <option>Olahraga teratur</option>
+                                  </select>
+                              </div>
+                              <div>
+                                  <label>Nilai</label><br>
+                                  <input type="number" min="0" max="100" placeholder="0">
+                              </div> 
+                              <div>
+                                <label>Mampu memecahkan masalah & mengambil keputusan</label><br>
+                                <select>
+                                  <option selected disabled>-- Pilih --</option>
+                                  <option>Pengenalan dan definisi masalah</option>
+                                  <option>Penentuan sejumlah solusi alternatif</option>
+                                  <option>Penentuan kriteria yang akan digunkan dalam mengevaluasi solusi alternatif</option>
+                                  <option>Evaluasi solusi alternatif</option>
+                                  <option>Pemilihan solusi alternatif terpilih</option>
+                                  <option>Implementasi solusi alternatif terpilih</option>
+                                  <option>Evaluasi hasil yang diperoleh untuk menentukan diperolehnya solusi yang memuaskan</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>Nilai</label><br>
+                                <input type="number" min="0" max="100" placeholder="0">
+                            </div>    
+                            <div>
+                              <label>Siap mengambil resiko</label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                                <option>Keinginan yang kuat</option>
+                                <option>Keyakinan dan optimisme</option>
+                                <option>Ilmu</option>
+                              </select>
+                          </div>
+                          <div>
+                              <label>Nilai</label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                          </div>    
+                          <div>
+                            <label>Mampu mengembangkan potensi diri</label><br>
+                            <select>
+                              <option selected disabled>-- Pilih --</option>
+                              <option>Mengenali diri sendiri secara mendalam</option>
+                              <option>Tujuan hidup</option>
+                              <option>Berpikir positif</option>
+                              <option>Komitmen terhadap niat dan tujuan</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Nilai</label><br>
+                            <input type="number" min="0" max="100" placeholder="0">
+                        </div>                 
+                              </div>
+                          </form>
+                      
+                          <h3 style="color:red;">Skill</h3>
+                          <form>                       
+                              <div class="form-group">
+                              <div>
+                                  <label>Memiliki salahsatu keterampilan usaha</label><br>
+                                  <select>
+                                    <option selected disabled>-- Pilih --</option>
+                                    <option>Mampu mengelola koperasi sekolah</option>
+                                    <option>Naluri mengenali peluang usaha</option>
+                                    <option>Menjaga reputasi</option>
+                                    <option>Menerapakan keterampilan dasar</option>
+                                    <option>Menerapkan keterampilan konseptual</option>
+                                    <option>Menerapkan keterampilan administratif</option>
+                                    <option>Menerapkan keterampilan teknis</option>
+                                    <option>Keterampilan dalam mengambil keputusan</option>
+                                  </select>
+                              </div>
+                              <div>
+                                  <label>Nilai</label><br>
+                                  <input type="number" min="0" max="100" placeholder="0">
+                              </div>
+                              <div>
+                                <label>Mampu berpidato</label><br>
+                                <select>
+                                  <option selected disabled>-- Pilih --</option>
+                                  <option>Mampu berpidato</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>Nilai</label><br>
+                                <input type="number" min="0" max="100" placeholder="0">
+                            </div>
+                            <div>
+                              <label>Dapat melakukan perbaikan Instalasi Listrik Pemakaian</label><br>
+                              <select>
+                                <option selected disabled>-- Pilih --</option>
+                                <option>Dapat melakukan perbaikan Instalasi Listrik Pemakaian</option>
+                              </select>
+                          </div>
+                          <div>
+                              <label>Nilai</label><br>
+                              <input type="number" min="0" max="100" placeholder="0">
+                          </div>
+                          <div>
+                            <label>Mulai belajar mengurus anak-anak (adiknya/saudara)</label><br>
+                            <select>
+                              <option selected disabled>-- Pilih --</option>
+                              <option>Mulai belajar mengurus anak-anak (adiknya/saudara)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Nilai</label><br>
+                            <input type="number" min="0" max="100" placeholder="0">
+                        </div>
+                              </div>            
+                              </form>
+                            </div>                          
+
+        <script>
+          function tampilkanKelas() {
+          const value = document.getElementById("kelas").value;
+        
+            // Sembunyikan semua form
+          document.querySelectorAll('.form-section').forEach(div => div.style.display = 'none');
+        
+            // Tampilkan form sesuai nilai select
+          const targetDiv = document.getElementById(value.replace(/\s/g, ''));
+          if (targetDiv) {
+          targetDiv.style.display = "block";
+        }
+      }
+        </script>
+
+  </form>
+    <button type="submit">Simpan</button>
+  </form>
+  
+</body>
+</html>
+
+

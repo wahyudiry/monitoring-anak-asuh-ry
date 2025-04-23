@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .card {
+      display: inline-block;
+      padding: 16px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      width: fit-content; /* menyesuaikan lebar dengan isi */
+      max-width: 100%; /* biar gak kebablasan kalau teks panjang */
+      word-wrap: break-word;
+    }
+
+    .grafik-container {
+      width: 50%;
+      max-width: 500px;
+      margin: left;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 10px;
+      padding: 8px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #34495e;
+    }
+
+    .main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+    <div class="sidebar">
+    <h2>Menu</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="kyd.html">Input Data Base Anak Asuh Mukim</a>
+    <a href="Tabel Data Base Anak Asuh.html">Tabel Data Base Anak Asuh Mukim</a>
+    <a href="Kuantitas Data Anak Asuh Mukim.html">Kuantitas Data Anak Asuh Mukim</a>
+    <a href="Input Data Diniyah.html">Input Data Perkembangan Diniyah</a>
+    <a href="Tabel Perkembangan Diniyah Per Anak.html">Tabel Perkembangan Diniyah Per Anak</a>
+    <a href="Rekap Diniyah Perjenjang Pendidikan.html">Rekap Diniyah Per Jenjang Pendidikan</a>
+    <a href="Pencapaian Target Diniyah (PDKS) Asrama.html">Pencapaian Target Diniyah (PDKS) Asrama</a>
+    <a href="Rekap hafalan ayat Perjenjang Tingkat Pendidikan.html">Rekap hafalan ayat Perjenjang Tingkat Pendidikan</a>
+    <a href="Login.html">Logout</a>
+    </div>
+
+    <div class="main">
+      <h1>Monitoring Anak Asuh Mukim</h1>
+  
+      <div class="card-container">
+      <div class="card">
+          <h3>Total Anak Asuh</h3>
+          <p>123 Anak</p>
+      </div>
+      <div class="card">
+          <h3>Total Laki-laki</h3>
+          <p>123 Anak</p>
+      </div>
+      <div class="card">
+        <h3>Total Perempuan</h3>
+        <p>123 Anak</p>    
+      </div>
+      <div class="card">
+        <h3>Total Yatim</h3>
+        <p>123 Anak</p>    
+      </div>
+      <div class="card">
+        <h3>Total Dhuafa</h3>
+        <p>123 Anak</p>    
+      </div>
+      <div class="card">
+        <h3>Total Asrama</h3>
+        <p>27 Lokasi</p>
+      </div>    
+      </div>
+      <div class="card">
+        <h3>Pra/TK</h3>
+        <p>123 Anak</p>    
+      </div>
+      <div class="card">
+        <h3>SD</h3>
+        <p>123 Anak</p>    
+      </div>
+      <div class="card">
+        <h3>SMP</h3>
+        <p>123 Anak</p>    
+      </div>
+      <div class="card">
+        <h3>SMA</h3>
+        <p>123 Anak</p>    
+      </div>
+
+  
+
+    <!-- Kamu bisa tambahkan grafik, tabel, atau ringkasan lainnya di sini -->
+    <h2>Grafik Jumlah Hafalan Anak per Bulan</h2>
+    <div class="grafik-container">
+      <canvas id="grafikHafalan"></canvas>
+    </div>
+  
+    <script>
+      const ctx = document.getElementById('grafikHafalan').getContext('2d');
+      const grafikHafalan = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember','Januari','Februari','Maret','April','Mei','Juni'],
+          datasets: [{
+            label: 'Jumlah Hafalan (ayat)',
+            data: [10, 14, 12, 18, 15, 20,25,40,30,16,20,45], // Data bisa kamu ganti sesuai kebutuhan
+            backgroundColor: '#4CAF50'
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>
+
+<h2>Grafik Pencapaian Target</h2>
+<div class="grafik-container">
+  <canvas id="PencapaianTarget"></canvas>
+</div>
+
+<script>
+  const ctx2 = document.getElementById('PencapaianTarget').getContext('2d');
+  const PencapaianTarget = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+      labels: ['Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember','Januari','Februari','Maret','April','Mei','Juni'],
+      datasets: [{
+        label: '% Pencapaian',
+        data: [9, 16, 33, 36, 45, 0,0,0,0,0,0,0], // Data bisa kamu ganti sesuai kebutuhan
+        backgroundColor: '#4CAF50'
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+
+
+</body>
+</html>

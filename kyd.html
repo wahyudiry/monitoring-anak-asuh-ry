@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Input Data Anak Asuh Mukim</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #ddd;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 10px;
+      padding: 8px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #34495e;
+    }
+
+    /* Form content */
+    .content {
+      flex: 1;
+      padding: 30px;
+      background: #f4f4f4;
+    }
+
+    .form-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .form-item {
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input, select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    h1, h2 {
+      margin-top: 20px;
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Sidebar Menu -->
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="kyd.html">Input Data Base Anak Asuh Mukim</a>
+    <a href="Tabel Data Base Anak Asuh.html">Tabel Data Base Anak Asuh Mukim</a>
+    <a href="Kuantitas Data Anak Asuh Mukim.html">Kuantitas Data Anak Asuh Mukim</a>
+    <a href="Input Data Diniyah.html">Input Data Perkembangan Diniyah</a>
+    <a href="Tabel Perkembangan Diniyah Per Anak.html">Tabel Perkembangan Diniyah Per Anak</a>
+    <a href="Rekap Diniyah Perjenjang Pendidikan.html">Rekap Diniyah Per Jenjang Pendidikan</a>
+    <a href="Pencapaian Target Diniyah (PDKS) Asrama.html">Pencapaian Target Diniyah (PDKS) Asrama</a>
+    <a href="Rekap hafalan ayat Perjenjang Tingkat Pendidikan.html">Rekap hafalan ayat Perjenjang Tingkat Pendidikan</a>
+    <a href="Login.html">Logout</a>
+  </div>
+
+  <!-- Form Content -->
+  <div class="content">
+    <h1>Input Data Base Anak Asuh Mukim</h1>
+  
+    <div class="form-group">
+    <div class="form-item">
+        <label>Nama Asrama</label>
+        <select><option>Filter</option></select>
+    </div>
+    <div class="form-item">
+        <label>Nama Lengkap Anak</label>
+        <input type="text" placeholder="Value">
+    </div>
+    </div>
+    <div class="form-group">
+    <div class="form-item">
+        <label>Nomor ID Anak</label>
+        <input type="text" value="otomatis" readonly>
+    </div>
+    <div class="form-item">
+        <label>Jenis Kelamin</label>
+        <select><option>Filter</option></select>
+    </div>
+    <div class="form-item">
+        <label>Nomor Kartu Keluarga</label>
+        <input type="text" placeholder="Value">
+    </div>
+    <div class="form-item">
+        <label>Photo Anak</label>
+        <input type="file">
+    </div>
+    <div class="form-item">
+        <label>Tempat Lahir</label>
+        <input type="text" placeholder="Value">
+    </div>
+    <div class="form-item">
+        <label>Tanggal Lahir</label>
+        <input type="date">
+    </div>
+    <div class="form-item">
+        <label>Usia Sekarang</label>
+        <input type="text" value="otomatis" readonly>
+    </div>
+    <div class="form-item">
+        <label>Jumlah Saudara Kandung</label>
+        <input type="number" placeholder="Value">
+    </div>
+    </div>
+
+    <h2>Alamat Asal</h2>
+    <div class="form-group">
+    <div class="form-item">
+        <label>Kampung</label>
+        <input type="text" placeholder="Value">
+    </div>
+    <div class="form-item">
+        <label>RT</label>
+        <input type="text" placeholder="Value">
+    </div>
+    <div class="form-item">
+        <label>RW</label>
+        <input type="text" placeholder="Value">
+    </div>
+    <div class="form-item">
+        <label>Desa / Kelurahan</label>
+        <select><option>Filter</option></select>
+    </div>
+    <div class="form-item">
+        <label>Kecamatan</label>
+        <select><option>Filter</option></select>
+    </div>
+    <div class="form-item">
+        <label>Kabupaten / Kota</label>
+        <select><option>Filter</option></select>
+    </div>
+    <div class="form-item">
+        <label>Provinsi</label>
+        <select><option>Filter</option></select>
+    </div>
+    <div class="form-item">
+        <label>Masuk Asrama</label>
+        <input type="date">
+    </div>
+    <div class="form-item">
+        <label>Keluar Asrama</label>
+        <input type="date">
+    </div>
+    <div class="form-item">
+        <label>Nama Sekolah Sekarang</label>
+        <input type="text" placeholder="Value">
+    </div>
+    <div class="form-item">
+        <label>Cita-cita</label>
+        <input type="text" placeholder="Value">
+    </div>
+    <div class="form-item">
+        <label>Prestasi Akademik / Non Akademik</label>
+        <input type="text" placeholder="Value">
+    </div>
+    <div class="form-item">
+        <label>Keterampilan yang dimiliki</label>
+        <input type="text" placeholder="Value">
+    </div>
+    <div class="form-item">
+        <label>Keterangan</label>
+        <select><option>Filter</option></select>
+    </div>
+    <div class="form-item">
+        <label>Sekolah</label>
+        <select><option>Filter</option></select>
+    </div>
+    <div class="form-item">
+        <label>Kelas</label>
+        <select><option>Filter</option></select>
+    </div>
+    </div>
+
+    <div class="form-group">
+    <div class="form-item">
+        <label>Riwayat Pendidikan TK</label>
+        <select><option>Filter</option></select>
+    </div>
+    <div class="form-item">
+        <label>Nama Sekolah</label>
+        <select><option>Filter</option></select>
+    </div>
+    <div class="form-item">
+        <label>Tahun</label>
+        <input type="text" placeholder="Value">
+    </div>
+    </div>
+    <div class="form-group">
+    <div class="form-item">
+        <label>Riwayat Pendidikan SD</label>
+        <select><option>Filter</option></select>
+    </div>
+    <div class="form-item">
+        <label>Nama Sekolah</label>
+        <select><option>Filter</option></select>
+    </div>
+    <div class="form-item">
+        <label>Tahun</label>
+        <input type="text" placeholder="Value">
+    </div>
+    </div>
+    <div class="form-group">
+    <div class="form-item">
+        <label>Riwayat Pendidikan SMP</label>
+        <select><option>Filter</option></select>
+    </div>
+    <div class="form-item">
+        <label>Nama Sekolah</label>
+        <select><option>Filter</option></select>
+    </div>
+    <div class="form-item">
+        <label>Tahun</label>
+        <input type="text" placeholder="Value">
+    </div>
+    </div>
+
+    <h2>Biodata Orang Tua</h2>
+    <div class="form-group">
+    <div class="form-item">
+        <label>Nama Ayah</label>
+        <input type="text" placeholder="Value">
+    </div>
+    <div class="form-item">
+        <label>Pekerjaan</label>
+        <input type="text" placeholder="Value">
+    </div>
+    <div class="form-item">
+        <label>Penghasilan / Bulan</label>
+        <input type="text" placeholder="Value">
+    </div>
+    <div class="form-item">
+        <label>Alamat</label>
+        <input type="text" placeholder="Value">
+    </div>
+    <div class="form-item">
+        <label>Nama Ibu</label>
+        <input type="text" placeholder="Value">
+    </div>
+    <div class="form-item">
+        <label>Pekerjaan</label>
+        <input type="text" placeholder="Value">
+    </div>
+    <div class="form-item">
+        <label>Penghasilan / Bulan</label>
+        <input type="text" placeholder="Value">
+    </div>
+    <div class="form-item">
+        <label>Alamat</label>
+        <input type="text" placeholder="Value">
+    </div>
+    <div class="form-item">
+        <label>Status Keluarga</label>
+        <select><option>Filter</option></select>
+    </div>      
+    <div class="form-item">
+        <label>Cerita Latar Belakang</label>
+        <input type="text" placeholder="Value">
+    </div> 
+    </div>
+    
+    <h2>Isian Kelengkapan Formulir</h2>
+    <div class="form-group">
+    <div class="form-item">
+      <label>Surat Permohonan Penambahan Anak Asuh</label>
+      <input type="file">
+    </div>
+    <div class="form-item">
+      <label>Surat Tugas Melakukan Assessment Anak</label>
+      <input type="file">
+    </div>
+    <div class="form-item">
+      <label>Surat Permohonan Masuk Asrama Dari Orang Tua</label>
+      <input type="file">
+    </div>
+    <div class="form-item">
+      <label>Dokumen Asseement Awal Orang Tua / Wali Calon Anak Asuh</label>
+      <input type="file">
+    </div>
+    <div class="form-item">
+      <label>Dokumen Assessment Anak</label>
+      <input type="file">
+    </div>
+    <div class="form-item">
+      <label>Formulir Pendaftaran</label>
+      <input type="file">
+    </div>
+    <div class="form-item">
+      <label>FC-Kartu Keluarga</label>
+      <input type="file">
+    </div>
+    <div class="form-item">
+      <label>FC-SKTM / Kematian</label>
+      <input type="file">
+    </div>
+    <div class="form-item">
+      <label>FC-KTP</label>
+      <input type="file">
+    </div>
+    <div class="form-item">
+      <label>FC-Akte Lahir</label>
+      <input type="file">
+    </div>
+    <div class="form-item">
+      <label>Surat Pernyataan Kesiapan Dari Anak Untuk Tinggal Di Asrama</label>
+      <input type="file">
+    </div>
+    <div class="form-item">
+      <label>Surat Pernyataan Orang Tua/Wali</label>
+      <input type="file">
+    </div>
+    <div class="form-item">
+      <label>Surat Keterangan Sehat Dari Dokter</label>
+      <input type="file">
+    </div>
+    <div class="form-item">
+      <label>Surat Keputusan Penempatan Anak di Asrama</label>
+      <input type="file">
+    </div>
+    <div class="form-item">
+      <label>Laporan Hasil Survey Sekolah</label>
+      <input type="file">
+    </div>
+    <div class="form-item">
+      <label>Hasil Survey Verifikasi Mustahik Orang Tua / Wali Bakal Calon Anak Asuh</label>
+      <input type="file">
+    </div>
+    </div>
+
+    
+    <h2>Hafalan AL Qur'an yang sudah pernah di hafal oleh anak</h2>
+    <div class="form-group">
+    <div>
+      <label>Juz 1</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 2</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 2</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 4</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 5</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 6</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 7</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 8</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 9</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 10</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 11</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 12</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 13</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 14</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 15</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 16</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 17</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 18</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 19</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 20</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 21</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 22</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 23</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 24</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 25</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 26</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 27</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 28</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 29</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    <div>
+      <label>Juz 30</label><br>
+      <input type="number" min="0" max="100" placeholder="0">
+    </div>
+    </div>
+  <form> 
+    <button type="submit">Simpan</button>
+  </form>
+</div>
+</body>
+</html>
+
+

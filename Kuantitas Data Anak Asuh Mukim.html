@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin: 10px 0;
+      padding: 5px;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #34495e;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+      overflow-x: auto;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 1000px;
+    }
+
+    th {
+      border: 1px solid black;
+      padding: 8px;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    td {
+      border: 1px solid black;
+      padding: 8px;
+      font-size: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Sidebar Menu -->
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="kyd.html">Input Data Base Anak Asuh Mukim</a>
+    <a href="Tabel Data Base Anak Asuh.html">Tabel Data Base Anak Asuh Mukim</a>
+    <a href="Kuantitas Data Anak Asuh Mukim.html">Kuantitas Data Anak Asuh Mukim</a>
+    <a href="Input Data Diniyah.html">Input Data Perkembangan Diniyah</a>
+    <a href="Tabel Perkembangan Diniyah Per Anak.html">Tabel Perkembangan Diniyah Per Anak</a>
+    <a href="Rekap Diniyah Perjenjang Pendidikan.html">Rekap Diniyah Per Jenjang Pendidikan</a>
+    <a href="Pencapaian Target Diniyah (PDKS) Asrama.html">Pencapaian Target Diniyah (PDKS) Asrama</a>
+    <a href="Rekap hafalan ayat Perjenjang Tingkat Pendidikan.html">Rekap hafalan ayat Perjenjang Tingkat Pendidikan</a>
+    <a href="Login.html">Logout</a>
+  </div>
+
+  <!-- Konten (Tabel) -->
+  <div class="content">
+    <h1 style="color: darkmagenta; text-align: left;">Kuantitas Data Anak Asuh Mukim</h1>
+    <h3 style="text-align: left;">Periode Bulan :</h3>
+
+    <table>
+        <div>
+        <thead>
+        <tr>
+            <th rowspan="2">No</th>
+            <th rowspan="2">Nama Asrama</th>
+            <th colspan="3">Jenis Kelamin</th>
+            <th colspan="2">Keterangan</th>
+            <th rowspan="2">Jumlah</th>
+            <th colspan="5">Sekolah</th>
+            <th colspan="2">Keterangan</th>
+            <th rowspan="2">Jumlah</th>
+        <tr>
+            <th>Laki-Laki</th>
+            <th>Perempuan</th>
+            <th>Jumlah</th>
+            <th>Yatim</th>
+            <th>Dhuafa</th>
+            <th>PRA / TK</th>
+            <th>SD</th>
+            <th>SMP</th>
+            <th>SMA</th>
+            <th>Jumlah</th>
+            <th>Yayasan</th>
+            <th>Umum</th>              
+        </tr>    
+        </tr>
+    </thead>
+        <tr>
+            <td colspan="16">I. SEKTOR KEPULAAN SUMATRA</td>
+        </tr>
+        <tr>
+            <td colspan="16">Provinsi Aceh</td>
+        </tr>
+        <tr>
+            <td>1</td><td>ACEH</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td colspan="2">Jumlah</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td colspan="16">Provinsi Sumatra Utara</td>
+        </tr>
+        <tr>
+            <td>2</td><td>KARYAWISATA</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>3</td><td>SETIA BUDI</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+        <tr>
+        <td colspan="2">Jumlah</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td></td><td></td><td></td>
+        </tr>   
+        <tr>
+        <td colspan="16">Provinsi Riau</td>
+        </tr>       
+          <tr>
+            <td>4</td><td>PEKANBARU</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td colspan="2">Jumlah</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td colspan="16">Provinsi Lampung</td>
+                </tr>
+          <tr>
+            <td>5</td><td>KEDATON</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>6</td><td>MONGINSIDI</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td colspan="2">Jumlah</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td colspan="16">II. SEKTOR KEPULAAN JAWA</td>
+            </tr>
+            <tr>
+                <td colspan="16">Provinsi Banten</td>
+                </tr>
+          <tr>
+            <td>7</td><td>PAMULANG</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>8</td><td>BINTARO</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>9</td><td>HARKIT</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td colspan="2">Jumlah</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td colspan="16">Provinsi DKI Jakarta</td>
+                </tr>
+          <tr>
+          <tr>
+            <td>10</td><td>RAWASARI</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>11</td><td>CILANDAK</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>12</td><td>KEMANG</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>13</td><td>DUREN SAWIT</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>14</td><td>BEKASI</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td colspan="2">Jumlah</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td colspan="16">Provinsi Jawa Barat</td>
+                </tr>
+          <tr>
+          <tr>
+            <td>15</td><td>ARCAMANIK</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>16</td><td>CEMARA</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>17</td><td>MARGAHAYU</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>18</td><td>LODAYA</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>19</td><td>ATAPANI</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td colspan="2">Jumlah</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td colspan="16">Provinsi Jawa Tengah</td>
+                </tr>
+          <tr>
+            <td>20</td><td>TEGAL</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td colspan="2">Jumlah</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td colspan="16">Provinsi Yogyakarta</td>
+                </tr>
+          <tr>
+            <td>21</td><td>KALIURANG</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>22</td><td>MONJALI</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>23</td><td>GEDONG KUNING</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td colspan="2">Jumlah</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td colspan="16">Provinsi Jawa Timur</td>
+                </tr>
+          <tr>
+            <td>24</td><td>SURABAYA</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr><tr>
+            <td colspan="2">Jumlah</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td>
+            </tr>
+          <tr>
+            <td colspan="16">III. SEKTOR KEPULAAN NUSA TENGGARA</td>
+        </tr>
+        <tr>
+            <td colspan="16">Provinsi Nusa Tenggara Barat</td>
+            </tr>
+          <tr>
+            <td>25</td><td>MATARAM</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td colspan="2">Jumlah</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td colspan="16">IV. SEKTOR KEPULAAN KALIMANTAN</td>
+            </tr>
+            <tr>
+                <td colspan="16">Provinsi Kalimantan Selatan</td>
+                </tr>
+          <tr>
+            <td>26</td><td>BANJARBARU</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>27</td><td>BANJARMASIN</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+          </tr>  
+          <tr>
+            <td colspan="2">Jumlah</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td colspan="2">TOTAL</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td>
+                </tr>
+        </div>             
+        </table>    
+    </body>
+</html>
